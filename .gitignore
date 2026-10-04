@@ -1,0 +1,6 @@
+.env
+*.env
+hub/data/
+node_modules/
+*.enc
+.DS_Store

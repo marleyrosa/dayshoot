@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>DayliShoot – 20 modelos de shots</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fafaf5;--fg:#1d2a1f;--card:#fff;--mut:#66705f;--ac:#2f7d4f;--bd:#dfe3d6}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a15;--fg:#e8efe4;--card:#1d261f;--mut:#9aa693;--ac:#6fcf97;--bd:#2c372e}}
+:root[data-theme="dark"]{--bg:#141a15;--fg:#e8efe4;--card:#1d261f;--mut:#9aa693;--ac:#6fcf97;--bd:#2c372e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,sans-serif;padding:16px;max-width:1100px;margin-inline:auto}
+h1{font-size:22px;margin:0 0 4px}p.s{color:var(--mut);margin:0 0 12px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
+select,input{padding:7px 9px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.c h3{margin:0 0 2px;font-size:16px}.t{font-size:12px;color:var(--mut)}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:99px;background:var(--ac);color:#fff;margin-right:4px}
+.tag.p{background:#b7791f}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}td{padding:3px 0;border-bottom:1px dashed var(--bd)}td:last-child{text-align:right;white-space:nowrap}
+.tot{display:flex;justify-content:space-between;font-weight:700}.m{font-size:12px;color:var(--mut);margin-top:6px}
+.ok{cursor:pointer}.w{font-size:12px;color:var(--mut);margin-top:16px}
+</style></head><body>
+<h1>DayliShoot · 20 modelos de shots</h1>
+<p class="s">Custo por dose (~50 ml) em R$, estimativa de varejo no Brasil. <b>Preços são estimativas minhas, não cotações</b> — validar com fornecedores.</p>
+<div class="bar"><select id="k"><option value="">Todos os kits</option></select><select id="o"><option value="n">Ordem original</option><option value="c">Mais baratos</option><option value="d">Mais caros</option></select>
+<label>Preço de venda/dose R$ <input id="pv" type="number" value="6" step="0.5" style="width:80px"></label></div>
+<div class="g" id="g"></div>
+<p class="w">Benefícios são potenciais e de evidência variável; não são alegações de saúde. Antes de vender no Brasil, conferir regras da ANVISA (rotulagem/alegações) e do MAPA. Contraindicações gerais: gestantes, anticoagulantes, diabetes, gastrite/refluxo e uso de medicamentos → orientar consulta profissional. Custo não inclui frasco, rótulo, mão de obra, frete ou taxas de marketplace.</p>
+<script>
+const M=[
+["Clássico Gengibre‑Limão‑Cúrcuma","🇧🇷🇪🇸🇺🇸 PT/ES/EN","Imunidade","Antioxidante e anti‑inflamatório potencial (gingerol, curcumina); vitamina C.",[["Gengibre fresco","10 g",.15],["Cúrcuma (raiz)","5 g",.15],["Limão","1/2 un",.3],["Pimenta‑do‑reino","0,3 g",.03],["Água","30 ml",.02]],"fonte"],
+["Dourado com Mel","🇧🇷 PT","Bem‑estar geral","Combina cúrcuma + pimenta (piperina ajuda absorção da curcumina); mel suaviza.",[["Cúrcuma em pó","2 g",.12],["Limão","1/2 un",.3],["Mel","10 g",.25],["Pimenta‑do‑reino","0,3 g",.03],["Chá (infusão)","40 ml",.15]],"fonte"],
+["Laranja‑Canela‑Gengibre","🇧🇷 PT","Energia e foco","Vitamina C; canela e gengibre dão sabor e calor; sabor mais suave.",[["Laranja","1/2 un",.4],["Canela em pó","1 g",.05],["Gengibre","5 g",.08]],"fonte"],
+["Abacaxi‑Gengibre‑Cúrcuma","🇧🇷🇺🇸 PT/EN","Saúde digestiva","Bromelina do abacaxi + gengibre: apoio digestivo e sensação de leveza.",[["Abacaxi","60 g",.35],["Gengibre","8 g",.12],["Cúrcuma (raiz)","3 g",.09],["Vinagre de maçã","5 ml",.15],["Sal marinho","pitada",.01]],"fonte"],
+["Maçã‑Vinagre‑Caiena","🇺🇸 EN","Emagrecimento","Ácido acético (vinagre) e capsaicina: apoio potencial a saciedade/metabolismo — evidência modesta.",[["Vinagre de maçã","15 ml",.45],["Suco de maçã","30 ml",.3],["Caiena","0,2 g",.03],["Limão","1/4 un",.15]],"fonte"],
+["Cenoura‑Cúrcuma‑Limão","🇺🇸 EN","Rejuvenescimento","Betacaroteno (pele) + curcumina; doce e suave.",[["Suco de cenoura","35 ml",.25],["Limão","1/4 un",.15],["Cúrcuma em pó","1 g",.06],["Pimenta‑do‑reino","0,2 g",.02]],"fonte"],
+["Beterraba‑Gengibre‑Limão","🇳🇬🇺🇸 EN","Energia e força","Nitratos da beterraba: apoio potencial a desempenho/pré‑treino.",[["Beterraba","50 g",.15],["Gengibre","8 g",.12],["Limão","1/4 un",.15],["Salsa","3 g",.05]],"fonte"],
+["Verde: Espinafre‑Maçã Verde‑Limão","🇧🇷 PT","Detox","Clorofila, vitamina K, fibras solúveis do suco; sabor fresco.",[["Espinafre","25 g",.35],["Maçã verde","1/3 un",.6],["Limão","1/4 un",.15]],"fonte"],
+["Pepino‑Maçã‑Caiena","🇺🇸 EN","Detox","Hidratante, leve, toque picante. Sensação de frescor.",[["Pepino","40 g",.1],["Maçã verde","1/4 un",.45],["Tangerina/clementina","1/2 un",.25],["Caiena","0,1 g",.02]],"fonte"],
+["Própolis‑Cúrcuma‑Gengibre","🇧🇷 PT","Imunidade","Própolis (ação antimicrobiana potencial) + anti‑inflamatórios. Atenção: alergia a abelha/própolis.",[["Extrato de própolis","12 gotas",.6],["Cúrcuma em pó","1 g",.06],["Gengibre","5 g",.08],["Água","40 ml",.02]],"fonte"],
+["Spirulina‑Cúrcuma‑Própolis","🇧🇷 PT","Energia e foco","Proteína e ferro vegetais da spirulina; sabor forte.",[["Spirulina","1 g",.35],["Cúrcuma em pó","1 g",.06],["Própolis","10 gotas",.5],["Água","30 ml",.02]],"fonte"],
+["Matchá Verde Energizante","🇨🇷🇪🇸 ES","Energia e foco","Cafeína + L‑teanina: energia calma; antioxidantes (catequinas).",[["Matchá","1,5 g",1.05],["Limão","1/4 un",.15],["Mel","5 g",.12],["Água","40 ml",.02]],"fonte"],
+["Amla‑Gengibre‑Pimenta","🇮🇳 EN/HI","Rejuvenescimento","Amla é muito rica em vitamina C e antioxidantes. Em pó/polpa por ser difícil fresca no Brasil.",[["Amla (pó/polpa)","3 g",.6],["Gengibre","5 g",.08],["Pimenta‑do‑reino","0,2 g",.02],["Mel","5 g",.12]],"fonte"],
+["Tulsi‑Gengibre‑Gur (Ayurveda)","🇮🇳 EN/HI","Saúde digestiva","Tradição ayurvédica para digestão após refeições pesadas; tulsi é adaptógeno tradicional.",[["Tulsi (manjericão‑sagrado)","1 g seco",.15],["Gengibre seco/fresco","5 g",.08],["Rapadura/jaggery","5 g",.05],["Limão","1/4 un",.15]],"fonte"],
+["Cenoura‑Salsão‑Maçã‑Gengibre","🇩🇪 DE/EN","Imunidade","Versão alemã leve com suco de espinheiro‑marítimo (vit. C); no Brasil substituível por acerola.",[["Cenoura","40 g",.1],["Salsão","30 g",.25],["Maçã","1/4 un",.45],["Gengibre","10 g",.15],["Acerola (polpa)","20 g",.3]],"fonte"],
+["Vinagre de Maçã‑Canela‑Mel","🇳🇱🇺🇸 EN/NL","Emagrecimento","Sabor ácido‑quente; canela pode ajudar no controle de vontade de doce (evidência limitada).",[["Vinagre de maçã","15 ml",.45],["Canela em pó","1 g",.05],["Mel","5 g",.12],["Limão","1/4 un",.15],["Água","30 ml",.02]],"fonte"],
+["Coco‑Cúrcuma‑Mel‑Sal","🇺🇸 EN","Bem‑estar geral","Hidratação com eletrólitos da água de coco; base suave.",[["Água de coco","40 ml",.25],["Cúrcuma em pó","1 g",.06],["Gengibre em pó","1 g",.05],["Mel","8 g",.2],["Vinagre de maçã","3 ml",.1],["Sal marinho","pitada",.01]],"fonte"],
+["Noite calma: Camomila‑Maracujá‑Melissa","proposta","Qualidade do sono","Ingredientes tradicionalmente relaxantes. Não tem fonte direta na pesquisa: requer validação.",[["Camomila (infusão)","40 ml",.3],["Melissa","1 g",.25],["Polpa de maracujá","20 g",.4],["Mel","5 g",.12]],"proposta"],
+["Intestino Leve: Ameixa‑Chia‑Mamão","proposta","Limpeza intestinal","Fibras e sorbitol da ameixa, mucilagem da chia. Não tem fonte direta: requer validação.",[["Ameixa‑preta","1 un",.5],["Chia","5 g",.12],["Mamão","50 g",.25],["Limão","1/4 un",.15]],"proposta"],
+["Glow: Acerola‑Colágeno‑Cúrcuma","proposta","Rejuvenescimento","Vitamina C para síntese de colágeno + curcumina. Não tem fonte direta: requer validação.",[["Acerola (polpa)","30 g",.45],["Colágeno hidrolisado","5 g",1.2],["Cúrcuma em pó","1 g",.06],["Limão","1/4 un",.15]],"proposta"]
+];
+const f=v=>"R$ "+v.toFixed(2).replace(".",",");
+const ks=[...new Set(M.map(m=>m[2]))].sort();
+const K=document.getElementById("k");ks.forEach(x=>K.add(new Option(x,x)));
+function r(){
+ const pv=parseFloat(document.getElementById("pv").value)||0,o=document.getElementById("o").value,k=K.value;
+ let L=M.map((m,i)=>({m,i,t:m[4].reduce((a,x)=>a+x[2],0)})).filter(x=>!k||x.m[2]==k);
+ if(o=="c")L.sort((a,b)=>a.t-b.t);if(o=="d")L.sort((a,b)=>b.t-a.t);
+ document.getElementById("g").innerHTML=L.map(({m,i,t})=>`<div class="c"><span class="tag${m[5]=="proposta"?" p":""}">${m[5]=="proposta"?"proposta":"pesquisado"}</span><span class="tag" style="background:var(--mut)">${m[2]}</span>
+ <h3>${i+1}. ${m[0]}</h3><div class="t">${m[1]}</div><p style="margin:6px 0 0">${m[3]}</p>
+ <table>${m[4].map(x=>`<tr><td>${x[0]} <span class="t">(${x[1]})</span></td><td>${f(x[2])}</td></tr>`).join("")}</table>
+ <div class="tot"><span>Total/dose</span><span>${f(t)}</span></div>
+ <div class="m">Margem bruta a ${f(pv)}: ${pv?((pv-t)/pv*100).toFixed(0)+"% ("+f(pv-t)+")":"–"} · 30 doses: ${f(t*30)}</div></div>`).join("");
+}
+K.onchange=document.getElementById("o").onchange=document.getElementById("pv").oninput=r;r();
+</script></body></html>
