@@ -1,0 +1,4 @@
+Coloque aqui as fotos reais dos kits, uma por kit, com o nome do kit:
+limpeza-intestinal.jpg, energia-foco.jpg, emagrecimento.jpg, rejuvenescimento.jpg, energia-forca.jpg,
+imunidade.jpg, sono.jpg, digestiva.jpg, detox.jpg, bem-estar.jpg
+Formato quadrado (1:1), de preferencia 1000x1000 px, ate 300 KB cada. Se o arquivo existir, ele substitui a ilustracao.

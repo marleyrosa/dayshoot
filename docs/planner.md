@@ -19,12 +19,13 @@ Kits (10): limpeza intestinal, energia e foco, emagrecimento, rejuvenescimento, 
 - [ ] Testar receitas (3-5 por kit, degustação cega com 10-20 pessoas) — base: docs/modelos-20-shots.html
 - [ ] Definir kits, validade, custos e margem (meta bruta ≥ 60%)
 - [ ] Identidade visual e embalagens
-- [x] Primeira versão do site (site/index.html)
+- [x] Site v2: layout de marketplace, detalhe do kit, filtros, carrinho e checkout (site/index.html)
+- [ ] Fotos reais dos kits em site/img/<kit>.jpg (após produzir os primeiros shots)
 
 ## Arquitetura de automação (Hub Claude)
 Entradas: Mercado Livre, Shopee, Amazon → Hub (Claude) → módulos: Pedidos, Estoque, Perguntas, Vendas.
 - [x] Servidor Mercado Livre v0.1 (hub/server.js) — falta testar com conta real
-- [ ] Servidor online + domínio HTTPS; cadastrar redirect e webhook no painel do ML
+- [ ] Servidor Orange Pi (Armbian + Node 22 + túnel) — agendado para sex 09/10/2026 19h; cadastrar redirect e webhook no painel do ML
 - [ ] Autorizar conta vendedora (/ml/auth); mapear SKU ↔ anúncios (hub/data/ml-items.json)
 - [ ] Módulo Perguntas: Claude rascunha, humano aprova
 - [ ] Módulo Vendas (painel); depois Shopee e Amazon

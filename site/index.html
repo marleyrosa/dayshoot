@@ -2,142 +2,177 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#f3f6ee;--card:#fff;--fg:#16231b;--mut:#5d6b60;--bd:#dde5d6;--g1:#1f4d36;--g2:#3e7b4f;--lime:#b7d957;--sun:#f2b632;--hdr:#1f4d36;--hdrfg:#fff}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1812;--card:#17231b;--fg:#e9f1e4;--mut:#9db0a1;--bd:#263629;--g1:#7fcf93;--g2:#5fb577;--hdr:#0b130e}}
-:root[data-theme="dark"]{--bg:#0f1812;--card:#17231b;--fg:#e9f1e4;--mut:#9db0a1;--bd:#263629;--g1:#7fcf93;--g2:#5fb577;--hdr:#0b130e}
-*{box-sizing:border-box}html{scroll-padding-top:120px;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 Figtree,system-ui,sans-serif}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
-a{color:inherit}button{font:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-.w{max-width:1200px;margin:auto;padding:0 16px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hdr);color:var(--hdrfg)}
-.top{display:flex;gap:14px;align-items:center;padding:10px 0}
-.logo{font:800 22px "Bricolage Grotesque",sans-serif;white-space:nowrap;text-decoration:none;display:flex;gap:6px;align-items:center}
-.srch{flex:1;display:flex;min-width:0}.srch input{flex:1;min-width:0;padding:11px 14px;border:0;border-radius:10px 0 0 10px;font:inherit}
-.srch button{border:0;background:var(--lime);color:#16231b;padding:0 16px;border-radius:0 10px 10px 0;font-weight:600}
-.cartb{background:none;border:1px solid #ffffff55;color:#fff;border-radius:10px;padding:9px 14px;position:relative}
-.cartb b{background:var(--sun);color:#16231b;border-radius:99px;padding:0 7px;margin-left:6px;font-size:13px}
-nav{background:var(--g2);color:#fff}nav .w{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-nav a{padding:9px 12px;white-space:nowrap;text-decoration:none;font-size:14px;border-radius:6px}nav a:hover{background:#ffffff26}
-.promo{background:var(--sun);color:#16231b;text-align:center;font-size:14px;padding:6px 12px;font-weight:500}
-.hero{background:linear-gradient(120deg,#1f4d36 0%,#2f6b45 60%,#6f9f45 100%);color:#fff;border-radius:0 0 28px 28px}
-.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding:36px 16px 44px}
-.hero h1{font-size:clamp(32px,5vw,54px);font-weight:800;letter-spacing:-.02em}
-.hero p{font-size:18px;max-width:46ch;color:#e5f0dc;margin:14px 0 22px}
-.btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;font-weight:600;text-decoration:none}
-.b1{background:var(--lime);color:#16231b}.b2{background:transparent;border:1.5px solid #ffffff88;color:#fff;margin-left:8px}
-.bots{display:flex;justify-content:center;align-items:flex-end;gap:2px}.bots svg{width:30%;max-width:130px}.bots svg:nth-child(2){transform:translateY(-14px) scale(1.12)}
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-22px auto 0;position:relative}
-.strip div{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;font-size:14px}.strip b{display:block}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f2f6ec;--card:#fff;--fg:#16231b;--mut:#5d6b60;--bd:#dde5d6;--g1:#1f4d36;--g2:#3e7b4f;--lime:#b7d957;--sun:#f2b632;--hdr:#1f4d36;--on:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1812;--card:#17231b;--fg:#e9f1e4;--mut:#9db0a1;--bd:#263629;--g1:#7fcf93;--g2:#5fb577;--hdr:#0b130e;--on:#0b130e}}
+:root[data-theme="dark"]{--bg:#0f1812;--card:#17231b;--fg:#e9f1e4;--mut:#9db0a1;--bd:#263629;--g1:#7fcf93;--g2:#5fb577;--hdr:#0b130e;--on:#0b130e}
+*{box-sizing:border-box}html{scroll-padding-top:130px;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}a{color:inherit}button{font:inherit;cursor:pointer}:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.w{max-width:1240px;margin:auto;padding:0 16px}.promo{background:var(--sun);color:#16231b;text-align:center;font-size:14px;padding:6px 12px;font-weight:500}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hdr);color:#fff}.top{display:flex;gap:12px;align-items:center;padding:10px 0}
+.logo{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none;display:flex;gap:6px;align-items:center;white-space:nowrap}
+.cep{background:none;border:0;color:#fff;text-align:left;font-size:12px;line-height:1.2;white-space:nowrap}.cep b{display:block;font-size:14px}
+.srch{flex:1;display:flex;min-width:0}.srch input{flex:1;min-width:0;padding:11px 14px;border:0;border-radius:10px 0 0 10px;font:inherit}.srch button{border:0;background:var(--lime);color:#16231b;padding:0 16px;border-radius:0 10px 10px 0;font-weight:600}
+.cartb{background:none;border:1px solid #ffffff55;color:#fff;border-radius:10px;padding:9px 14px}.cartb b{background:var(--sun);color:#16231b;border-radius:99px;padding:0 7px;margin-left:6px;font-size:13px}
+nav{background:var(--g2);color:#fff}nav .w{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}nav a{padding:9px 12px;white-space:nowrap;text-decoration:none;font-size:14px;border-radius:6px}nav a:hover{background:#ffffff26}
+.hero{background:radial-gradient(circle at 80% 30%,#6f9f45 0,#2f6b45 45%,#1f4d36 100%);color:#fff;border-radius:0 0 32px 32px}.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding:36px 16px 56px}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-.02em}.hero p{font-size:18px;max-width:46ch;color:#e5f0dc;margin:14px 0 22px}.hero .art{max-width:380px;margin:auto;width:100%}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;font-weight:600;text-decoration:none}.b1{background:var(--lime);color:#16231b}.b2{border:1.5px solid #ffffff88;color:#fff;margin-left:8px}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-28px auto 0;position:relative}.strip div{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;font-size:14px}.strip b{display:block}
 section{padding:36px 0 8px}h2{font-size:clamp(24px,3vw,32px);margin-bottom:6px}.sub{color:var(--mut);margin:0 0 18px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.chip{border:1px solid var(--bd);background:var(--card);color:var(--fg);border-radius:99px;padding:6px 14px;font-size:14px}
-.chip[aria-pressed=true]{background:var(--g1);color:#fff;border-color:var(--g1)}
-:root[data-theme=dark] .chip[aria-pressed=true]{color:#0b130e}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.pic{height:170px;display:grid;place-items:center;position:relative}.pic svg{height:140px}
-.badge{position:absolute;top:10px;left:10px;background:var(--g1);color:#fff;font-size:12px;padding:2px 9px;border-radius:99px}
-:root[data-theme=dark] .badge{color:#0b130e}
-.cb{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}.cb h3{font-size:18px}
-.ing{font-size:13px;color:var(--mut)}.pr{font:700 24px "Bricolage Grotesque",sans-serif}.pr small{font:400 13px Figtree;color:var(--mut)}.pr s{font:400 13px Figtree;color:var(--mut);margin-left:6px}
-select{width:100%;padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);font:inherit;font-size:14px}
-.add{background:var(--sun);border:0;border-radius:10px;padding:10px;font-weight:700;color:#16231b;margin-top:auto}
-.acc .pic{height:110px;background:#e6efd9}.acc .pic svg{height:80px}
-.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.plan{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px}.plan.hot{border:2px solid var(--g2)}
-.plan h3{font-size:19px}.plan .d{font:800 30px "Bricolage Grotesque";color:var(--g2)}.plan p{margin:6px 0 0;font-size:14px;color:var(--mut)}
-details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 16px;margin-bottom:8px}summary{cursor:pointer;font-weight:600}
+.tiles{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}.tile{flex:0 0 112px;text-align:center;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 6px;font-size:13px;color:var(--fg);font-weight:600}.tile span{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;margin:0 auto 6px}.tile svg{height:40px}
+.shop{display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:start}.side{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;position:sticky;top:140px}.side h3{font-size:15px;margin:10px 0 6px}.side h3:first-child{margin-top:0}
+.side label{display:flex;gap:8px;align-items:center;font-size:14px;padding:3px 0}.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;color:var(--mut);font-size:14px;gap:8px}
+select,input.f{padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);font:inherit;font-size:14px;width:100%}.bar select{width:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}.card:hover{box-shadow:0 8px 24px #0002;transform:translateY(-2px)}
+.pic{aspect-ratio:1/1;position:relative;background:var(--pc,#eee);cursor:pointer;display:block;width:100%;border:0;padding:0}.pic svg,.pic img{position:absolute;inset:0;width:100%;height:100%}.pic img{object-fit:cover}
+.badge{position:absolute;top:10px;left:10px;background:var(--g1);color:var(--on);font-size:12px;padding:2px 9px;border-radius:99px;z-index:2}
+.cb{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}.cb h3{font-size:18px;cursor:pointer}.ing{font-size:13px;color:var(--mut)}
+.pr{font:700 24px "Bricolage Grotesque",sans-serif}.pr small{font:400 13px Figtree;color:var(--mut)}.pr s{font:400 13px Figtree;color:var(--mut);margin-left:6px}
+.add{background:var(--sun);border:0;border-radius:10px;padding:10px;font-weight:700;color:#16231b;margin-top:auto}.ghost{background:none;border:1px solid var(--bd);color:var(--fg);border-radius:10px;padding:8px}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.plan{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px}.plan.hot{border:2px solid var(--g2)}.plan h3{font-size:19px}.plan .d{font:800 30px "Bricolage Grotesque";color:var(--g2)}.plan p{margin:6px 0 0;font-size:14px;color:var(--mut)}
+details.q{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 16px;margin-bottom:8px}summary{cursor:pointer;font-weight:600}
+.news{background:var(--g1);color:var(--on);border-radius:18px;padding:24px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}.news input{padding:11px;border-radius:10px;border:0;min-width:240px}
 footer{margin-top:40px;background:var(--hdr);color:#cfe0d3;padding:28px 0;font-size:13px}
-#dr{position:fixed;inset:0;background:#0008;display:none;z-index:40;justify-content:flex-end}#dr.on{display:flex}
-#dp{background:var(--card);width:min(420px,100%);height:100%;padding:18px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding-top:calc(18px + env(safe-area-inset-top,0px));padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+.ov{position:fixed;inset:0;background:#0009;display:none;z-index:40}.ov.on{display:flex}#dr{justify-content:flex-end}#md{align-items:center;justify-content:center;padding:16px}
+.pn{background:var(--card);overflow:auto;padding:18px;display:flex;flex-direction:column;gap:10px}#dp{width:min(430px,100%);height:100%;padding-top:calc(18px + env(safe-area-inset-top,0px));padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+#mp{width:min(880px,100%);max-height:100%;border-radius:18px;display:grid;grid-template-columns:1fr 1fr;gap:20px}.mi{background:var(--pc);border-radius:14px;position:relative;aspect-ratio:1/1}.mi svg,.mi img{position:absolute;inset:0;width:100%;height:100%}
 .li{display:flex;gap:10px;justify-content:space-between;border-bottom:1px solid var(--bd);padding:8px 0;font-size:14px}.li button{border:1px solid var(--bd);background:none;color:var(--fg);border-radius:6px;width:26px;height:26px}
-pre{background:#0d1a12;color:#b7e3c0;padding:10px;border-radius:8px;overflow:auto;font-size:12px;max-height:220px}
-.msg{background:#e6f4d6;color:#16231b;border-radius:8px;padding:8px 10px;font-size:14px}
-@media(max-width:820px){.hero .w{grid-template-columns:1fr}.bots{order:-1;max-width:280px;margin:auto}.strip,.plans{grid-template-columns:1fr 1fr}.top{flex-wrap:wrap}.srch{order:3;flex-basis:100%}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.ul{list-style:none;padding:0;margin:6px 0}.ul li{font-size:14px;padding:5px 0;border-bottom:1px dashed var(--bd)}.ul b{color:var(--g2)}.warn{background:#fff3d6;color:#5a4300;border-radius:8px;padding:8px 10px;font-size:13px}
+.prog{height:8px;background:var(--bd);border-radius:9px;overflow:hidden}.prog i{display:block;height:100%;background:var(--g2)}
+pre{background:#0d1a12;color:#b7e3c0;padding:10px;border-radius:8px;overflow:auto;font-size:12px;max-height:200px}.msg{background:#e6f4d6;color:#16231b;border-radius:8px;padding:8px 10px;font-size:14px}.err{color:#b42318;font-size:13px}
+label.l{font-size:13px;color:var(--mut)}
+@media(max-width:860px){.hero .w{grid-template-columns:1fr}.hero .art{max-width:260px;order:-1}.strip,.plans{grid-template-columns:1fr 1fr}.top{flex-wrap:wrap}.srch{order:3;flex-basis:100%}.cep{display:none}.shop{grid-template-columns:1fr}.side{position:static;display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}#mp{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
 </style></head><body>
-<div class="promo">Frete grátis em assinaturas mensais e semestrais · valores de demonstração</div>
-<header><div class="w top"><a class="logo" href="#top"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M12 22C6 18 4 12 5 5c7 0 12 3 13 9 .4 3-1.600 6-6 8z" fill="#b7d957"/><path d="M12 21c0-6 1-9 5-12" stroke="#1f4d36" stroke-width="1.500" fill="none"/></svg>DayliShoot</a>
-<form class="srch" role="search" onsubmit="return false"><input id="q" type="search" placeholder="Buscar kit, ingrediente ou objetivo" aria-label="Buscar"><button type="submit">Buscar</button></form>
-<button class="cartb" id="co" aria-label="Abrir carrinho">Carrinho<b id="cn">0</b></button></div>
-<nav><div class="w" id="nv"></div></nav></header>
+<div class="promo">Frete grátis acima de R$ 120 · assine e economize até 25% · valores de demonstração</div>
+<header><div class="w top"><a class="logo" href="#top"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22C6 18 4 12 5 5c7 0 12 3 13 9 .4 3-1.6 6-6 8z" fill="#b7d957"/><path d="M12 21c0-6 1-9 5-12" stroke="#1f4d36" stroke-width="1.5" fill="none"/></svg>DayliShoot</a>
+<button class="cep" id="cepb"><span>Enviar para</span><b id="cepv">Informe seu CEP</b></button>
+<div class="srch" role="search"><input id="q" type="search" placeholder="Buscar kit, ingrediente ou objetivo" aria-label="Buscar"><button id="qb">Buscar</button></div>
+<button class="cartb" id="co" aria-label="Abrir carrinho">Carrinho<b id="cn">0</b></button></div><nav><div class="w" id="nv"></div></nav></header>
 <main id="top">
-<div class="hero"><div class="w"><div><h1>Comece o dia com um shot de natureza.</h1><p>Gengibre, cúrcuma, frutas e ervas em doses de 50 ml, montadas em kits por objetivo. Compre avulso ou assine e receba toda semana.</p><a class="btn b1" href="#kits">Ver os 10 kits</a><a class="btn b2" href="#planos">Planos e assinatura</a></div><div class="bots" id="hb"></div></div></div>
-<div class="w strip"><div><b>Ingredientes naturais</b>Sem corantes artificiais</div><div><b>Assine e economize</b>Até 25% no semestral</div><div><b>Cancele quando quiser</b>Sem fidelidade</div><div><b>Vendido também em</b>Mercado Livre, Shopee e Amazon</div></div>
-<section id="kits"><div class="w"><h2>Kits por objetivo</h2><p class="sub">Escolha o kit e o plano. Cada kit rende doses de 50 ml.</p><div class="chips" id="ch"></div><div class="grid" id="gr"></div><p class="sub" id="em" hidden>Nenhum kit encontrado. Tente outro termo ou limpe o filtro.</p></div></section>
+<div class="hero"><div class="w"><div><h1>Comece o dia com um shot de natureza.</h1><p>Gengibre, cúrcuma, frutas e ervas em doses de 50 ml, organizadas em kits por objetivo. Compre avulso ou assine e receba toda semana.</p><a class="btn b1" href="#kits">Ver os 10 kits</a><a class="btn b2" href="#planos">Planos e assinatura</a></div><div class="art" id="ha"></div></div></div>
+<div class="w strip"><div><b>Ingredientes naturais</b>Sem corantes artificiais</div><div><b>Assine e economize</b>Até 25% no semestral</div><div><b>Cancele quando quiser</b>Sem fidelidade</div><div><b>Também no marketplace</b>Mercado Livre, Shopee e Amazon</div></div>
+<section><div class="w"><h2>Compre por objetivo</h2><p class="sub">Escolha o que você quer da sua manhã.</p><div class="tiles" id="tl"></div></div></section>
+<section id="kits"><div class="w"><h2>Todos os kits</h2><p class="sub">Clique no kit para ver ingredientes, modo de uso e cuidados.</p>
+<div class="shop"><aside class="side" aria-label="Filtros"><h3>Objetivo</h3><div id="fo"></div><h3>Preço (7 shots)</h3><div id="fp"></div></aside>
+<div><div class="bar"><span id="rc"></span><label>Ordenar: <select id="so"><option value="r">Relevância</option><option value="a">Menor preço</option><option value="d">Maior preço</option><option value="n">Nome (A–Z)</option></select></label></div>
+<div class="grid" id="gr"></div><p class="sub" id="em" hidden>Nenhum kit encontrado. Limpe os filtros ou tente outro termo.</p></div></div></div></section>
 <section id="planos"><div class="w"><h2>Planos de compra</h2><p class="sub">Quanto maior o plano, menor o preço por shot.</p><div class="plans" id="pl"></div></div></section>
 <section id="acessorios"><div class="w"><h2>Acessórios</h2><p class="sub">Compre junto com o kit ou separado.</p><div class="grid" id="ac"></div></div></section>
 <section id="faq"><div class="w"><h2>Perguntas frequentes</h2><p class="sub"></p>
-<details><summary>Por que tomar um shot matinal?</summary><p>É uma forma prática de incluir ingredientes naturais logo no início do dia, em poucos goles.</p></details>
-<details><summary>Quais são os benefícios?</summary><p>Cada ingrediente tem benefícios potenciais descritos na ficha do kit. Os resultados variam e o shot não substitui alimentação equilibrada nem tratamento médico.</p></details>
-<details><summary>Por que o sabor pode ser forte?</summary><p>Porque os ingredientes são naturais e têm compostos ativos de sabor marcante, como gengibre e cúrcuma.</p></details>
-<details><summary>Existe alguma contraindicação?</summary><p>Gestantes, lactantes, pessoas com gastrite ou refluxo, diabetes ou que usam anticoagulantes e outros medicamentos devem consultar um profissional de saúde antes de consumir.</p></details>
-<details><summary>Em quanto tempo começo a sentir diferença?</summary><p>Varia conforme organismo, alimentação, estilo de vida e constância de uso.</p></details></div></section></main>
-<footer><div class="w">DayliShoot · Produtos de demonstração, preços e prazos fictícios para validação do layout. Antes do lançamento: conferir rotulagem e alegações com ANVISA/vigilância sanitária. Este site não faz alegações de cura ou tratamento.</div></footer>
-<div id="dr" role="dialog" aria-modal="true" aria-label="Carrinho"><div id="dp"></div></div>
+<details class="q"><summary>Por que tomar um shot matinal?</summary><p>É uma forma prática de incluir ingredientes naturais logo no início do dia, em poucos goles.</p></details>
+<details class="q"><summary>Quais são os benefícios?</summary><p>Cada ingrediente tem benefícios potenciais descritos na ficha do kit. Os resultados variam e o shot não substitui alimentação equilibrada nem tratamento médico.</p></details>
+<details class="q"><summary>Por que o sabor pode ser forte?</summary><p>Porque os ingredientes são naturais e têm compostos ativos de sabor marcante, como gengibre e cúrcuma.</p></details>
+<details class="q"><summary>Existe alguma contraindicação?</summary><p>Gestantes, lactantes, pessoas com gastrite ou refluxo, diabetes ou que usam anticoagulantes e outros medicamentos devem consultar um profissional de saúde antes de consumir.</p></details>
+<details class="q"><summary>Em quanto tempo começo a sentir diferença?</summary><p>Varia conforme organismo, alimentação, estilo de vida e constância de uso.</p></details></div></section>
+<section><div class="w"><div class="news"><div><h2 style="color:inherit">Receba dicas e o lançamento</h2><span>Conteúdo educativo sobre hábitos saudáveis e a lista de espera.</span></div><div><input id="ne" type="email" placeholder="seu@email.com" aria-label="E-mail"> <button class="btn b1" id="nb">Quero receber</button><div id="nm" class="err" style="color:inherit"></div></div></div></div></section></main>
+<footer><div class="w">DayliShoot · Produtos, preços e prazos de demonstração para validação do layout. Antes do lançamento: conferir rotulagem e alegações com a ANVISA/vigilância sanitária. Este site não faz alegações de cura ou tratamento; as informações são de caráter geral e não substituem orientação profissional.</div></footer>
+<div class="ov" id="dr" role="dialog" aria-modal="true" aria-label="Carrinho"><div class="pn" id="dp"></div></div>
+<div class="ov" id="md" role="dialog" aria-modal="true" aria-label="Detalhes do kit"><div class="pn" id="mp"></div></div>
 <script>
-/* ===== CONFIGURAÇÃO / PONTOS DE INTEGRAÇÃO ===== */
-const CONFIG={store:"DayliShoot",currency:"BRL",
- endpoints:{orders:"",stock:"",questions:""}, // preencher com a API do hub (pedidos/estoque/perguntas)
+/* ===== CONFIG / INTEGRAÇÃO ===== */
+const CONFIG={store:"DayliShoot",currency:"BRL",freeShipping:120,
+ endpoints:{orders:"",stock:"",questions:""},
  channels:{mercadolivre:{enabled:false},shopee:{enabled:false},amazon:{enabled:false}}};
-const PLANS=[{id:"avulso",n:"Compra avulsa",doses:7,d:0,t:"1 kit de 7 shots, sem compromisso."},{id:"semanal",n:"Plano semanal",doses:7,d:.05,t:"Entrega semanal recorrente."},{id:"mensal",n:"Plano mensal",doses:30,d:.12,t:"30 shots por mês, frete grátis.",hot:1},{id:"semestral",n:"Plano semestral",doses:180,d:.25,t:"6 meses de rotina, melhor preço."}];
+/* Fotos reais: salve em site/img/<id>.jpg (ex.: img/imunidade.jpg). Se existir, substitui a ilustração. */
+const BEN={gengibre:["#d9b27a","root","tradicionalmente associado à digestão e à sensação de bem-estar"],"cúrcuma":["#e0a526","root","contém curcumina, composto antioxidante"],"limão":["#f3d43b","round","fonte de vitamina C"],"pimenta-do-reino":["#555","round","a piperina favorece a absorção da curcumina"],"matchá":["#6fa341","leaf","cafeína com L-teanina, energia mais calma"],laranja:["#f59a23","round","fonte de vitamina C"],canela:["#a8683a","stick","dá sabor adocicado sem açúcar"],"vinagre de maçã":["#e0b35a","drop","ácido acético, com efeito modesto sobre a saciedade"],caiena:["#d62f1f","leaf","capsaicina, sensação de calor"],acerola:["#d93a3a","round","uma das maiores fontes naturais de vitamina C"],cenoura:["#ee7b22","root","betacaroteno, precursor da vitamina A"],"colágeno":["#f5e7d3","drop","proteína usada em rotinas de cuidado com a pele"],beterraba:["#8e1f4a","round","nitratos, estudados no desempenho físico"],salsa:["#3f9a4a","leaf","erva fresca, sabor e aroma"],ameixa:["#6b2d6f","round","fibras e sorbitol, apoio ao trânsito intestinal"],chia:["#444","round","fibras que formam gel e dão saciedade"],"mamão":["#f29d38","round","contém papaína, enzima tradicional na digestão"],camomila:["#f2e27a","flower","uso tradicional para relaxar"],"maracujá":["#e6c23a","round","uso tradicional como calmante suave"],melissa:["#5fae5c","leaf","erva tradicional para relaxar"],mel:["#e2a42b","drop","adoçante natural"],abacaxi:["#f0c53a","round","contém bromelina, enzima digestiva"],tulsi:["#3f8f4a","leaf","erva ayurvédica tradicional"],espinafre:["#2f8a3d","leaf","folhas verdes: clorofila, vitamina K e fibras"],"maçã verde":["#8fcf4f","round","fibras e frescor"],pepino:["#5bb36a","round","hidratante e leve"],"água de coco":["#e8f1e0","drop","hidratação com eletrólitos naturais"]};
+const CUID={g:"Pode irritar quem tem gastrite ou refluxo.",s:"Pode causar sonolência: não consuma antes de dirigir.",a:"Contém mel/própolis? Evite se tiver alergia. Não indicado para menores de 1 ano (mel)."};
 const KITS=[
-["limpeza-intestinal","Limpeza intestinal","Ameixa-preta, chia, mamão e limão","#8d5a97",6.2,"Novo"],
-["energia-foco","Energia e foco","Matchá, laranja, canela e gengibre","#7bb33a",6.9,"Mais vendido"],
-["emagrecimento","Emagrecimento","Vinagre de maçã, caiena, limão e canela","#e4572e",6.4,""],
-["rejuvenescimento","Rejuvenescimento","Acerola, cenoura, cúrcuma e colágeno","#f4a259",7.5,""],
-["energia-forca","Energia e força","Beterraba, gengibre, limão e salsa","#b5213f",6.5,""],
-["imunidade","Imunidade","Gengibre, cúrcuma, limão e pimenta-do-reino","#f2b632",5.9,"Mais vendido"],
-["sono","Qualidade do sono","Camomila, maracujá, melissa e mel","#6c8ebf",6.6,"Novo"],
-["digestiva","Saúde digestiva","Abacaxi, gengibre, cúrcuma e tulsi","#e8c547",6.0,""],
-["detox","Detox","Espinafre, maçã verde, pepino e limão","#2e9e5b",6.3,""],
-["bem-estar","Bem-estar geral","Água de coco, cúrcuma, gengibre e mel","#d9a441",5.8,""]];
-const ACCS=[["caixa","Caixa personalizada",24.9],["copo","Copo exclusivo",29.9],["misturador","Misturador",19.9],["frascos","Frascos de vidro (6 un.)",39.9]];
-const catalog=KITS.map(([id,name,ing,color,ps,badge])=>({sku:"KIT-"+id.toUpperCase(),id,name,ing,color,perShot:ps,badge,stock:null,channelIds:{mercadolivre:null,shopee:null,amazon:null}}));
-/* ===== UTIL ===== */
-const $=s=>document.querySelector(s),R=v=>"R$ "+v.toFixed(2).replace(".",",");
-const bottle=c=>`<svg viewBox="0 0 60 120" aria-hidden="true"><rect x="22" y="2" width="16" height="14" rx="3" fill="#2a3b2f"/><path d="M20 16h20v10c8 6 10 14 10 24v54c0 6-4 10-10 10H20c-6 0-10-4-10-10V50c0-10 2-18 10-24z" fill="#ffffffd9" stroke="#00000022"/><path d="M12 62h36v42c0 5-3 8-8 8H20c-5 0-8-3-8-8z" fill="${c}"/><path d="M30 76c-8 2-11 8-10 14 6 0 11-3 10-14z" fill="#ffffffaa"/></svg>`;
-const price=(k,p)=>k.perShot*p.doses*(1-p.d);
-let cart=[],filter="",qtext="";
+["limpeza-intestinal","Limpeza intestinal","Intestino leve","#8d5a97",6.2,"Novo",["ameixa","chia","mamão","limão"],"g"],
+["energia-foco","Energia e foco","Energia calma pela manhã","#7bb33a",6.9,"Mais vendido",["matchá","laranja","canela","gengibre"],"g"],
+["emagrecimento","Emagrecimento","Rotina leve e saciedade","#e4572e",6.4,"",["vinagre de maçã","caiena","limão","canela"],"g"],
+["rejuvenescimento","Rejuvenescimento","Cuidado com a pele","#f4a259",7.5,"",["acerola","cenoura","cúrcuma","colágeno"],"g"],
+["energia-forca","Energia e força","Pré-treino natural","#b5213f",6.5,"",["beterraba","gengibre","limão","salsa"],"g"],
+["imunidade","Imunidade","Clássico gengibre e cúrcuma","#f2b632",5.9,"Mais vendido",["gengibre","cúrcuma","limão","pimenta-do-reino"],"g"],
+["sono","Qualidade do sono","Noite mais calma","#6c8ebf",6.6,"Novo",["camomila","maracujá","melissa","mel"],"s"],
+["digestiva","Saúde digestiva","Leveza após as refeições","#e8c547",6.0,"",["abacaxi","gengibre","cúrcuma","tulsi"],"g"],
+["detox","Detox","Verde e fresco","#2e9e5b",6.3,"",["espinafre","maçã verde","pepino","limão"],"g"],
+["bem-estar","Bem-estar geral","Hidratação e rotina","#d9a441",5.8,"",["água de coco","cúrcuma","gengibre","mel"],"g"]];
+const PLANS=[{id:"avulso",n:"Compra avulsa",doses:7,d:0,t:"1 kit de 7 shots, sem compromisso."},{id:"semanal",n:"Plano semanal",doses:7,d:.05,t:"Entrega semanal recorrente."},{id:"mensal",n:"Plano mensal",doses:30,d:.12,t:"30 shots por mês, frete grátis.",hot:1},{id:"semestral",n:"Plano semestral",doses:180,d:.25,t:"6 meses de rotina, melhor preço."}];
+const ACCS=[["caixa","Caixa personalizada",24.9,"box"],["copo","Copo exclusivo",29.9,"cup"],["misturador","Misturador",19.9,"mix"],["frascos","Frascos de vidro (6 un.)",39.9,"jars"]];
+const catalog=KITS.map(([id,name,tag,color,ps,badge,ings,c],i)=>({sku:"KIT-"+id.toUpperCase(),id,name,tag,color,perShot:ps,badge,ings,cuid:CUID[c],ord:i,stock:null,channelIds:{mercadolivre:null,shopee:null,amazon:null}}));
+/* ===== ILUSTRAÇÕES (SVG) ===== */
+const $=s=>document.querySelector(s),R=v=>"R$ "+v.toFixed(2).replace(".",","),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function shape(n,x,y,r=13){const [c,t]=BEN[n]||["#9c9","round"];
+ if(t=="leaf")return`<path d="M${x} ${y+r}C${x-r*1.2} ${y} ${x-r*.4} ${y-r} ${x+r} ${y-r}C${x+r} ${y} ${x+r*.6} ${y+r} ${x} ${y+r}z" fill="${c}"/><path d="M${x} ${y+r}L${x+r*.6} ${y-r*.6}" stroke="#fff9" stroke-width="1.5"/>`;
+ if(t=="root")return`<rect x="${x-r*1.2}" y="${y-r*.55}" width="${r*2.4}" height="${r*1.1}" rx="${r*.5}" fill="${c}" transform="rotate(-25 ${x} ${y})"/><circle cx="${x-r*.3}" cy="${y-1}" r="1.6" fill="#0002"/>`;
+ if(t=="drop")return`<path d="M${x} ${y-r}C${x+r*1.1} ${y+r*.1} ${x+r*.8} ${y+r} ${x} ${y+r}C${x-r*.8} ${y+r} ${x-r*1.1} ${y+r*.1} ${x} ${y-r}z" fill="${c}" stroke="#0002"/>`;
+ if(t=="stick")return`<rect x="${x-r*1.3}" y="${y-r*.3}" width="${r*2.6}" height="${r*.6}" rx="${r*.3}" fill="${c}" transform="rotate(20 ${x} ${y})"/>`;
+ if(t=="flower")return[0,72,144,216,288].map(a=>`<circle cx="${x+Math.cos(a*Math.PI/180)*r*.7}" cy="${y+Math.sin(a*Math.PI/180)*r*.7}" r="${r*.45}" fill="#fff"/>`).join("")+`<circle cx="${x}" cy="${y}" r="${r*.4}" fill="${c}"/>`;
+ return`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/><circle cx="${x-r*.35}" cy="${y-r*.35}" r="${r*.3}" fill="#fff6"/>`}
+function bot(x,y,s,c,label){return`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-9" y="0" width="18" height="12" rx="3" fill="#2a3b2f"/><path d="M-8 12h16v9c7 5 9 11 9 20v52c0 5-4 9-9 9h-16c-5 0-9-4-9-9V41c0-9 2-15 9-20z" fill="#fff" fill-opacity=".92" stroke="#0002"/><path d="M-17 55h34v38c0 5-4 9-9 9h-16c-5 0-9-4-9-9z" fill="${c}"/><rect x="-13" y="62" width="26" height="22" rx="3" fill="#fff" fill-opacity=".92"/><text x="0" y="71" text-anchor="middle" font-size="5.5" font-weight="700" fill="#1f4d36" font-family="sans-serif">DayliShoot</text><text x="0" y="79" text-anchor="middle" font-size="4.6" fill="#333" font-family="sans-serif">${esc(label)}</text></g>`}
+function art(k){const [a,b,c]=k.ings;const ph=k.name.length>12?k.name.slice(0,12):k.name;
+ return`<svg viewBox="0 0 200 200" role="img" aria-label="Ilustração do kit ${esc(k.name)}"><defs><linearGradient id="g${k.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${k.color}" stop-opacity=".25"/><stop offset="1" stop-color="${k.color}" stop-opacity=".05"/></linearGradient></defs>
+ <circle cx="100" cy="102" r="86" fill="url(#g${k.id})"/><ellipse cx="100" cy="176" rx="70" ry="8" fill="#0002"/>${bot(62,70,.72,k.color,ph)}${bot(138,70,.72,k.color,ph)}${bot(100,56,.9,k.color,ph)}${shape(a,40,160)}${shape(b,160,160)}${shape(c,100,172,11)}</svg>`}
+function photo(k,l){return`<span class="ph">${art(k)}<img src="img/${k.id}.jpg" alt="Foto do kit ${esc(k.name)}" loading="${l||"lazy"}" onerror="this.remove()"></span>`}
+function accArt(t){const m={box:'<rect x="40" y="70" width="120" height="80" rx="6" fill="#c89b5f"/><path d="M40 70l20-24h80l20 24z" fill="#dcb274"/><rect x="85" y="95" width="30" height="20" rx="3" fill="#fff9"/>',cup:'<path d="M60 50h80l-10 100c-1 8-6 12-14 12H84c-8 0-13-4-14-12z" fill="#b7d957"/><rect x="60" y="50" width="80" height="14" rx="4" fill="#1f4d36"/><path d="M80 90c10-8 30 8 40 0" stroke="#fff" stroke-width="3" fill="none"/>',mix:'<rect x="94" y="30" width="12" height="120" rx="6" fill="#1f4d36"/><ellipse cx="100" cy="160" rx="24" ry="9" fill="#b7d957"/><circle cx="100" cy="30" r="10" fill="#3e7b4f"/>',jars:[40,80,120].map(x=>`<rect x="${x}" y="70" width="34" height="70" rx="8" fill="#e8f1e0" stroke="#0003"/><rect x="${x+4}" y="62" width="26" height="10" rx="3" fill="#2a3b2f"/><rect x="${x+4}" y="100" width="26" height="36" rx="5" fill="#b7d957"/>`).join("")};
+ return`<svg viewBox="0 0 200 200" aria-hidden="true">${m[t]}</svg>`}
+/* ===== ESTADO ===== */
+const price=(k,p)=>k.perShot*p.doses*(1-p.d),pMin=k=>price(k,PLANS[0]);
+let cart=[],fObj="",fPr="",qtext="",sortBy="r",cep="";
+try{cart=JSON.parse(localStorage.getItem("ds_cart")||"[]");cep=localStorage.getItem("ds_cep")||""}catch(_){}
+const save=()=>{try{localStorage.setItem("ds_cart",JSON.stringify(cart))}catch(_){}};
+const count=()=>cart.reduce((a,x)=>a+x.qty,0),total=()=>cart.reduce((a,x)=>a+x.unit*x.qty,0);
 /* ===== RENDER ===== */
-$("#hb").innerHTML=[catalog[5],catalog[1],catalog[8]].map(k=>bottle(k.color)).join("");
-$("#nv").innerHTML=catalog.map(k=>`<a href="#kits" data-k="${k.id}">${k.name}</a>`).join("")+`<a href="#planos">Planos</a><a href="#acessorios">Acessórios</a><a href="#faq">Dúvidas</a>`;
-$("#ch").innerHTML=`<button class="chip" aria-pressed="true" data-f="">Todos</button>`+catalog.map(k=>`<button class="chip" aria-pressed="false" data-f="${k.id}">${k.name}</button>`).join("");
-$("#pl").innerHTML=PLANS.map(p=>`<div class="plan${p.hot?" hot":""}"><h3>${p.n}</h3><div class="d">${p.d?"-"+p.d*100+"%":"Sem desconto"}</div><p>${p.doses} shots · ${p.t}</p></div>`).join("");
-$("#ac").innerHTML=ACCS.map(([id,n,v])=>`<div class="card acc"><div class="pic">${bottle("#b7d957")}</div><div class="cb"><h3>${n}</h3><div class="pr">${R(v)}</div><button class="add" data-a="${id}">Adicionar ao carrinho</button></div></div>`).join("");
-function grid(){const t=qtext.toLowerCase();const L=catalog.filter(k=>(!filter||k.id==filter)&&(!t||(k.name+k.ing).toLowerCase().includes(t)));
- $("#em").hidden=L.length>0;
- $("#gr").innerHTML=L.map(k=>{const p=PLANS[0];return`<article class="card" data-id="${k.id}"><div class="pic" style="background:${k.color}22">${k.badge?`<span class="badge">${k.badge}</span>`:""}${bottle(k.color)}</div><div class="cb"><h3>${k.name}</h3><div class="ing">${k.ing}</div><div class="pr"><span class="pv">${R(price(k,p))}</span> <small class="pd">7 shots · ${R(k.perShot)}/shot</small></div>
- <select aria-label="Plano de ${k.name}">${PLANS.map(x=>`<option value="${x.id}">${x.n} (${x.doses} shots)</option>`).join("")}</select><button class="add" data-k="${k.id}">Adicionar ao carrinho</button></div></article>`}).join("")}
-grid();
-$("#gr").addEventListener("change",e=>{if(e.target.tagName!="SELECT")return;const c=e.target.closest(".card"),k=catalog.find(x=>x.id==c.dataset.id),p=PLANS.find(x=>x.id==e.target.value);
- c.querySelector(".pv").textContent=R(price(k,p));c.querySelector(".pd").innerHTML=`${p.doses} shots · ${R(price(k,p)/p.doses)}/shot`+(p.d?`<s>${R(k.perShot*p.doses)}</s>`:"")});
-$("#ch").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;filter=b.dataset.f;document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c==b));grid()};
-$("#nv").onclick=e=>{const a=e.target.closest("a[data-k]");if(a){filter=a.dataset.k;document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.f==filter));grid()}};
-$("#q").oninput=e=>{qtext=e.target.value;grid()};
+$("#ha").innerHTML=art(catalog[5]);
+$("#nv").innerHTML=catalog.map(k=>`<a href="#kits" data-o="${k.id}">${k.name}</a>`).join("")+`<a href="#planos">Planos</a><a href="#acessorios">Acessórios</a><a href="#faq">Dúvidas</a>`;
+$("#tl").innerHTML=catalog.map(k=>`<button class="tile" data-o="${k.id}"><span style="background:${k.color}33">${bot(0,0,0,"#000","").slice(0,0)}<svg viewBox="-20 0 40 110"><g transform="translate(0 0)">${bot(0,2,.9,k.color,"").replace(/<text.*?<\/text>/g,"")}</g></svg></span>${k.name}</button>`).join("");
+$("#fo").innerHTML=`<label><input type="radio" name="o" value="" checked> Todos</label>`+catalog.map(k=>`<label><input type="radio" name="o" value="${k.id}"> ${k.name}</label>`).join("");
+$("#fp").innerHTML=[["","Qualquer preço"],["a","Até R$ 43"],["b","R$ 43 a R$ 48"],["c","Acima de R$ 48"]].map(([v,l],i)=>`<label><input type="radio" name="p" value="${v}"${i?"":" checked"}> ${l}</label>`).join("");
+$("#pl").innerHTML=PLANS.map(p=>`<div class="plan${p.hot?" hot":""}"><h3>${p.n}</h3><div class="d">${p.d?"-"+Math.round(p.d*100)+"%":"Sem desconto"}</div><p>${p.doses} shots · ${p.t}</p></div>`).join("");
+$("#ac").innerHTML=ACCS.map(([id,n,v,t])=>`<div class="card"><div class="pic" style="--pc:#e6efd9;cursor:default">${accArt(t)}</div><div class="cb"><h3 style="cursor:default">${n}</h3><div class="pr">${R(v)}</div><button class="add" data-a="${id}">Adicionar ao carrinho</button></div></div>`).join("");
+function cepTxt(){$("#cepv").textContent=cep?"CEP "+cep:"Informe seu CEP"}cepTxt();
+function list(){const t=qtext.toLowerCase();let L=catalog.filter(k=>(!fObj||k.id==fObj)&&(!t||(k.name+k.tag+k.ings.join(" ")).toLowerCase().includes(t))&&(!fPr||(fPr=="a"?pMin(k)<=43:fPr=="b"?pMin(k)>43&&pMin(k)<=48:pMin(k)>48)));
+ L.sort(sortBy=="a"?(x,y)=>pMin(x)-pMin(y):sortBy=="d"?(x,y)=>pMin(y)-pMin(x):sortBy=="n"?(x,y)=>x.name.localeCompare(y.name,"pt"):(x,y)=>x.ord-y.ord);
+ $("#em").hidden=L.length>0;$("#rc").textContent=L.length+" kit"+(L.length==1?"":"s");
+ $("#gr").innerHTML=L.map(k=>`<article class="card" data-id="${k.id}"><button class="pic" data-d="${k.id}" style="--pc:${k.color}22" aria-label="Ver detalhes de ${k.name}">${k.badge?`<span class="badge">${k.badge}</span>`:""}${photo(k)}</button><div class="cb"><h3 data-d="${k.id}">${k.name}</h3><div class="ing">${k.ings.join(", ")}</div><div class="pr"><span class="pv">${R(pMin(k))}</span> <small class="pd">7 shots · ${R(k.perShot)}/shot</small></div>
+ <select aria-label="Plano de ${k.name}">${PLANS.map(x=>`<option value="${x.id}">${x.n} (${x.doses} shots)</option>`).join("")}</select><button class="add" data-k="${k.id}">Adicionar ao carrinho</button></div></article>`).join("")}
+list();
+function setObj(v){fObj=v;document.querySelectorAll('input[name=o]').forEach(i=>i.checked=i.value==v);list()}
+document.addEventListener("change",e=>{const t=e.target;
+ if(t.name=="o")setObj(t.value);if(t.name=="p"){fPr=t.value;list()}if(t.id=="so"){sortBy=t.value;list()}
+ if(t.tagName=="SELECT"&&t.closest(".card[data-id]")){const c=t.closest(".card"),k=catalog.find(x=>x.id==c.dataset.id),p=PLANS.find(x=>x.id==t.value);
+  c.querySelector(".pv").textContent=R(price(k,p));c.querySelector(".pd").innerHTML=`${p.doses} shots · ${R(price(k,p)/p.doses)}/shot`+(p.d?`<s>${R(k.perShot*p.doses)}</s>`:"")}});
+$("#q").oninput=e=>{qtext=e.target.value;list()};$("#qb").onclick=()=>{qtext=$("#q").value;list();$("#kits").scrollIntoView&&$("#kits").scrollIntoView()};
+$("#cepb").onclick=()=>{const v=prompt("Digite seu CEP (8 números):",cep)||"";const d=v.replace(/\D/g,"");if(d.length==8){cep=d.slice(0,5)+"-"+d.slice(5);try{localStorage.setItem("ds_cep",cep)}catch(_){}cepTxt()}else if(v)alert("CEP inválido.")};
+$("#nb").onclick=()=>{const v=$("#ne").value.trim();$("#nm").textContent=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)?"Pronto! Você entrou na lista (demonstração: e-mail não foi enviado).":"Digite um e-mail válido."};
+/* ===== MODAL DO KIT ===== */
+function openKit(id){const k=catalog.find(x=>x.id==id),mp=$("#mp");
+ mp.innerHTML=`<div class="mi" style="--pc:${k.color}22">${photo(k,"eager")}</div><div><div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><div><h2 style="margin:0">${k.name}</h2><span class="ing">${k.tag}</span></div><button class="ghost" id="mx" aria-label="Fechar">✕</button></div>
+ <div class="pr" style="margin:8px 0">${R(pMin(k))} <small>7 shots · ${R(k.perShot)}/shot</small></div>
+ <h3 style="font-size:16px">Ingredientes e benefícios potenciais</h3><ul class="ul">${k.ings.map(n=>`<li><b>${n[0].toUpperCase()+n.slice(1)}</b>: ${BEN[n][2]}</li>`).join("")}</ul>
+ <p style="font-size:14px"><b>Como tomar:</b> 1 shot (50 ml) pela manhã. Agite antes de beber e mantenha refrigerado após aberto.</p><div class="warn"><b>Cuidados:</b> ${k.cuid} Gestantes, lactantes, diabéticos e quem usa medicamentos devem consultar um profissional de saúde. Os benefícios são potenciais e variam de pessoa para pessoa.</div>
+ <label class="l" style="display:block;margin-top:10px">Plano <select id="mpl">${PLANS.map(x=>`<option value="${x.id}">${x.n} (${x.doses} shots) · ${R(price(k,x))}</option>`).join("")}</select></label><button class="add" style="width:100%;margin-top:10px" data-m="${k.id}">Adicionar ao carrinho</button></div>`;
+ $("#md").classList.add("on");$("#mx").focus()}
 /* ===== CARRINHO ===== */
-document.addEventListener("click",e=>{const b=e.target.closest(".add");if(!b)return;
- if(b.dataset.k){const c=b.closest(".card"),k=catalog.find(x=>x.id==b.dataset.k),p=PLANS.find(x=>x.id==c.querySelector("select").value);add({sku:k.sku,name:k.name+" · "+p.n,plan:p.id,doses:p.doses,unit:price(k,p)})}
- else if(b.dataset.a){const a=ACCS.find(x=>x[0]==b.dataset.a);add({sku:"ACC-"+a[0].toUpperCase(),name:a[1],plan:"avulso",doses:0,unit:a[2]})}});
-function add(i){const f=cart.find(x=>x.sku==i.sku&&x.plan==i.plan);f?f.qty++:cart.push({...i,qty:1});$("#cn").textContent=cart.reduce((a,x)=>a+x.qty,0);open_()}
-const total=()=>cart.reduce((a,x)=>a+x.unit*x.qty,0);
-function open_(msg,payload){$("#dr").classList.add("on");
- $("#dp").innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><h2>Seu carrinho</h2><button id="x" class="chip">Fechar</button></div>`+
- (cart.length?cart.map((x,i)=>`<div class="li"><span>${x.name}<br><small>${R(x.unit)} cada</small></span><span><button data-m="${i}" aria-label="Diminuir">−</button> ${x.qty} <button data-p="${i}" aria-label="Aumentar">+</button></span></div>`).join("")+`<div class="li"><b>Total</b><b>${R(total())}</b></div><button class="add" id="ck">Finalizar pedido</button>`:`<p>Seu carrinho está vazio. Escolha um kit para começar.</p>`)+
- (msg?`<div class="msg">${msg}</div>`:"")+(payload?`<details open><summary>Dados enviados ao hub</summary><pre>${payload}</pre></details>`:"")}
-$("#co").onclick=()=>open_();
+document.addEventListener("click",e=>{const t=e.target;
+ const a=t.closest("[data-o]");if(a){setObj(a.dataset.o)}
+ const d=t.closest("[data-d]");if(d)return openKit(d.dataset.d);
+ const b=t.closest(".add");if(!b)return;
+ if(b.dataset.k){const c=b.closest(".card"),k=catalog.find(x=>x.id==b.dataset.k);addKit(k,c.querySelector("select").value)}
+ else if(b.dataset.m){addKit(catalog.find(x=>x.id==b.dataset.m),$("#mpl").value);$("#md").classList.remove("on")}
+ else if(b.dataset.a){const x=ACCS.find(y=>y[0]==b.dataset.a);add({sku:"ACC-"+x[0].toUpperCase(),name:x[1],plan:"avulso",doses:0,unit:x[2]})}});
+function addKit(k,pid){const p=PLANS.find(x=>x.id==pid);add({sku:k.sku,name:k.name+" · "+p.n,plan:p.id,doses:p.doses,unit:price(k,p)})}
+function add(i){const f=cart.find(x=>x.sku==i.sku&&x.plan==i.plan);f?f.qty++:cart.push({...i,qty:1});save();badge();drawer()}
+function badge(){$("#cn").textContent=count()}badge();
+function drawer(msg,payload,form){$("#dr").classList.add("on");const tt=total(),left=Math.max(0,CONFIG.freeShipping-tt);
+ $("#dp").innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><h2>Seu carrinho</h2><button id="x" class="ghost">Fechar</button></div>`+
+ (cart.length?`<div><small>${left?`Faltam ${R(left)} para frete grátis`:"Você ganhou frete grátis!"}</small><div class="prog"><i style="width:${Math.min(100,tt/CONFIG.freeShipping*100)}%"></i></div></div>`+cart.map((x,i)=>`<div class="li"><span>${esc(x.name)}<br><small>${R(x.unit)} cada</small></span><span><button data-m2="${i}" aria-label="Diminuir">−</button> ${x.qty} <button data-p="${i}" aria-label="Aumentar">+</button></span></div>`).join("")+`<div class="li"><b>Total</b><b>${R(tt)}</b></div>`+
+  (form?`<label class="l">Nome<input class="f" id="cn1" autocomplete="name"></label><label class="l">E-mail<input class="f" id="ce" type="email" autocomplete="email"></label><label class="l">CEP<input class="f" id="cc" value="${cep.replace(/\D/g,"")}" inputmode="numeric" maxlength="9"></label><div class="err" id="er" role="alert"></div><button class="add" id="cf">Confirmar pedido</button>`:`<button class="add" id="ck">Finalizar pedido</button>`):`<p>Seu carrinho está vazio. Escolha um kit para começar.</p>`)+
+ (msg?`<div class="msg">${msg}</div>`:"")+(payload?`<details open><summary>Dados enviados ao hub</summary><pre>${esc(payload)}</pre></details>`:"")}
+$("#co").onclick=()=>drawer();
 $("#dr").onclick=e=>{const t=e.target;if(t.id=="dr"||t.id=="x")$("#dr").classList.remove("on");
- if(t.dataset.p!=null){cart[t.dataset.p].qty++;}if(t.dataset.m!=null){const i=t.dataset.m;if(--cart[i].qty<1)cart.splice(i,1)}
- if(t.dataset.p!=null||t.dataset.m!=null){$("#cn").textContent=cart.reduce((a,x)=>a+x.qty,0);open_()}
- if(t.id=="ck")checkout()};
+ if(t.dataset.p!=null){cart[t.dataset.p].qty++;save();badge();drawer()}
+ if(t.dataset.m2!=null){const i=t.dataset.m2;if(--cart[i].qty<1)cart.splice(i,1);save();badge();drawer()}
+ if(t.id=="ck")drawer("",null,true);if(t.id=="cf")checkout()};
+$("#md").onclick=e=>{if(e.target.id=="md"||e.target.id=="mx")$("#md").classList.remove("on")};
+document.addEventListener("keydown",e=>{if(e.key=="Escape"){$("#md").classList.remove("on");$("#dr").classList.remove("on")}});
 /* ===== CHECKOUT → HUB ===== */
-async function checkout(){
- const order={id:"PED-"+Date.now(),channel:"loja-propria",currency:CONFIG.currency,createdAt:new Date().toISOString(),items:cart.map(({sku,plan,doses,qty,unit})=>({sku,plan,doses,qty,unit:+unit.toFixed(2)})),total:+total().toFixed(2)};
+async function checkout(){const n=$("#cn1").value.trim(),m=$("#ce").value.trim(),c=$("#cc").value.replace(/\D/g,""),er=$("#er");
+ if(n.length<3)return er.textContent="Informe seu nome.";if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m))return er.textContent="Informe um e-mail válido.";if(c.length!=8)return er.textContent="CEP deve ter 8 números.";
+ const order={id:"PED-"+Date.now(),channel:"loja-propria",currency:CONFIG.currency,createdAt:new Date().toISOString(),customer:{name:n,email:m,zip:c},items:cart.map(({sku,plan,doses,qty,unit})=>({sku,plan,doses,qty,unit:+unit.toFixed(2)})),total:+total().toFixed(2)};
  const body=JSON.stringify(order,null,2);window.dispatchEvent(new CustomEvent("dayshot:order",{detail:order}));
- if(!CONFIG.endpoints.orders){open_("Modo demonstração: nenhum endpoint de pedidos configurado. Pedido não foi enviado.",body);return}
- try{const r=await fetch(CONFIG.endpoints.orders,{method:"POST",headers:{"Content-Type":"application/json"},body});if(!r.ok)throw 0;cart=[];$("#cn").textContent=0;open_("Pedido recebido. Você receberá a confirmação por e-mail.")}
- catch(_){open_("Não foi possível enviar o pedido. Tente novamente em instantes.",body)}}
+ if(!CONFIG.endpoints.orders)return drawer("Modo demonstração: nenhum endpoint de pedidos configurado. Pedido não foi enviado.",body);
+ try{const r=await fetch(CONFIG.endpoints.orders,{method:"POST",headers:{"Content-Type":"application/json"},body});if(!r.ok)throw 0;cart=[];save();badge();drawer("Pedido recebido. Você receberá a confirmação por e-mail.")}
+ catch(_){drawer("Não foi possível enviar o pedido. Tente novamente em instantes.",body,true)}}
 </script></body></html>
