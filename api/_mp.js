@@ -1,8 +1,11 @@
 // Cliente mínimo da API do Mercado Pago. O token só existe no servidor (variável de ambiente).
 const API = "https://api.mercadopago.com";
 
+// A Vercel guarda o valor exatamente como foi colado: tira espaços, quebras de linha e aspas que viriam junto.
+const cleanToken = (v) => String(v || "").trim().replace(/^["']|["']$/g, "").trim();
+
 async function mp(path, { method = "GET", body, idem } = {}) {
-  const token = process.env.MP_ACCESS_TOKEN;
+  const token = cleanToken(process.env.MP_ACCESS_TOKEN);
   if (!token) throw Object.assign(new Error("Pagamentos não configurados."), { status: 503 });
   const r = await fetch(API + path, {
     method,
@@ -38,4 +41,4 @@ function readBody(req) {
   try { return JSON.parse(req.body || "{}"); } catch { return {}; }
 }
 
-module.exports = { mp, siteUrl, reais, cpfOk, readBody };
+module.exports = { cleanToken, mp, siteUrl, reais, cpfOk, readBody };
