@@ -57,3 +57,21 @@ test("assinatura só sozinha no carrinho", () => {
   assert.strictEqual(quote("01001000", [{ sku: "KIT-DETOX", plan: "avulso", qty: 1 }]).subscription, null);
   assert.throws(() => quote("01001000", [{ sku: "KIT-DETOX", plan: "mensal", qty: 1 }, { sku: "ACC-COPO", qty: 1 }]), /separadamente/);
 });
+
+// ---- assinatura do webhook ----
+const crypto = require("crypto");
+const { verifySignature } = require("./_signature");
+const sign = (secret, id, req, ts) => crypto.createHmac("sha256", secret).update(`id:${id};request-id:${req};ts:${ts};`).digest("hex");
+
+test("webhook: assinatura válida, inválida, expirada e ausente", () => {
+  const secret = "segredo-de-teste", now = Date.now(), ts = String(now);
+  const ok = { secret, requestId: "req-1", dataId: "ABC123", now, signature: `ts=${ts},v1=${sign(secret, "abc123", "req-1", ts)}` };
+  assert.strictEqual(verifySignature(ok).ok, true); // id alfanumérico é comparado em minúsculas
+  assert.strictEqual(verifySignature({ ...ok, dataId: "999" }).reason, "assinatura-invalida");
+  assert.strictEqual(verifySignature({ ...ok, secret: "outro" }).reason, "assinatura-invalida");
+  assert.strictEqual(verifySignature({ ...ok, signature: "" }).reason, "sem-assinatura");
+  assert.strictEqual(verifySignature({ ...ok, signature: "lixo" }).reason, "assinatura-mal-formada");
+  const velho = String(now - 3600e3);
+  assert.strictEqual(verifySignature({ ...ok, now, signature: `ts=${velho},v1=${sign(secret, "abc123", "req-1", velho)}` }).reason, "assinatura-expirada");
+  assert.strictEqual(verifySignature({ ...ok, secret: "" }).ok, true); // sem segredo configurado: não bloqueia
+});

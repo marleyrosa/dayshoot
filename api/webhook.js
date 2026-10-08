@@ -2,6 +2,7 @@
 // Pedido pago (avulso ou cada renovação de assinatura) -> enviado ao hub (HUB_ORDERS_URL + STORE_API_KEY) para baixar o estoque.
 // O hub não duplica: o id do pedido de cada cobrança é único e estável (reenvio do Mercado Pago não baixa estoque duas vezes).
 const { mp, readBody } = require("./_mp");
+const { verifySignature } = require("./_signature");
 
 async function toHub(order) {
   if (!process.env.HUB_ORDERS_URL) return true;
@@ -18,6 +19,12 @@ module.exports = async (req, res) => {
   const b = readBody(req), q = req.query || {};
   const type = b.type || q.type || q.topic;
   const id = String((b.data && b.data.id) || q["data.id"] || q.id || "").replace(/[^\w-]/g, "");
+  // Assinatura do Mercado Pago (MP_WEBHOOK_SECRET): rejeita avisos forjados antes de qualquer consulta.
+  const sig = verifySignature({
+    secret: process.env.MP_WEBHOOK_SECRET, signature: req.headers["x-signature"], requestId: req.headers["x-request-id"],
+    dataId: q["data.id"] || (b.data && b.data.id) || "",
+  });
+  if (!sig.ok) { console.warn("webhook rejeitado:", sig.reason); return res.status(401).json({ ok: false }); }
   if (!id) return res.status(200).json({ ok: true });
   try {
     if (type === "payment") {
