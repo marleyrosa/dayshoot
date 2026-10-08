@@ -15,6 +15,6 @@ module.exports = async (req, res) => {
     const p = await mp("/v1/payments/" + id);
     return res.status(200).json({ status: p.status, orderId: p.external_reference });
   } catch (e) {
-    return res.status(e.status || 500).json({ error: e.message });
+    return res.status(e.status || 500).json({ error: e.message, ...(e.detail ? { detail: e.detail } : {}) });
   }
 };

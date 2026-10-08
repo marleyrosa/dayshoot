@@ -16,7 +16,9 @@ async function mp(path, { method = "GET", body, idem } = {}) {
   const j = await r.json().catch(() => ({}));
   if (!r.ok) {
     console.error("mercadopago", method, path, r.status, JSON.stringify(j).slice(0, 500));
-    throw Object.assign(new Error("O provedor de pagamento recusou a solicitação."), { status: 502 });
+    // detalhe seguro para diagnóstico (código e mensagem do provedor; nunca o token)
+    const detail = { provider: r.status, message: String(j.message || j.error || "").slice(0, 200), cause: Array.isArray(j.cause) ? j.cause.slice(0, 3).map((c) => String(c.description || c.code || "").slice(0, 120)) : undefined };
+    throw Object.assign(new Error("O provedor de pagamento recusou a solicitação."), { status: 502, detail });
   }
   return j;
 }
