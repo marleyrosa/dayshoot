@@ -32,7 +32,7 @@ nav{border-top:1px solid #0000;color:var(--fg)}nav .w{display:flex;gap:2px;overf
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-34px auto 0;position:relative;z-index:3}.strip div{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px 16px;font-size:14px;color:var(--mut);box-shadow:var(--sh)}.strip b{display:flex;gap:8px;align-items:center;color:var(--fg);font-family:var(--disp);font-size:15px}.strip b::before{content:"";flex:0 0 9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d9ff94,var(--lime2) 60%,#3f9a1f)}
 section{padding:46px 0 8px}h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:6px}.sub{color:var(--mut);margin:0 0 20px;max-width:62ch}
 section h2:not([style])::after{content:"";display:block;width:96px;height:10px;margin-top:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 10'%3E%3Cpath d='M2 6C14 1 22 9 34 5s20-5 30-1 20 4 30 0' fill='none' stroke='%237cc93a' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat}
-.tiles{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin}.tile{flex:0 0 116px;text-align:center;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:12px 6px;font-size:13px;color:var(--fg);font-weight:600;box-shadow:var(--sh);transition:transform .2s,border-color .2s}.tile:hover{transform:translateY(-3px);border-color:var(--lime2)}.tile span{display:grid;place-items:center;width:62px;height:62px;border-radius:50%;margin:0 auto 8px}
+.tiles{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin}.tile{flex:0 0 116px;text-align:center;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:12px 6px;font-size:13px;color:var(--fg);font-weight:600;box-shadow:var(--sh);transition:transform .2s,border-color .2s}.tile:hover{transform:translateY(-3px);border-color:var(--lime2)}
 .shop{display:grid;grid-template-columns:230px 1fr;gap:22px;align-items:start}.side{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:16px;position:sticky;top:140px;box-shadow:var(--sh)}.side h3{font-size:15px;margin:12px 0 6px}.side h3:first-child{margin-top:0}
 .side label{display:flex;gap:8px;align-items:center;font-size:14px;padding:3px 0}.side input[type=radio],#dcup{accent-color:var(--g1)}.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;color:var(--mut);font-size:14px;gap:8px}
 select,input.f{padding:9px 12px;border:1.5px solid var(--bd);border-radius:12px;background:#fff;color:var(--fg);font:inherit;font-size:14px;width:100%}.bar select{width:auto}
@@ -58,6 +58,8 @@ footer{margin-top:48px;background:linear-gradient(180deg,#0a3f27,#072a1b);color:
 .prog{height:9px;background:var(--mint);border-radius:9px;overflow:hidden}.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--lime2),var(--g1));border-radius:9px}
 pre{background:#0d1a12;color:#b7e3c0;padding:10px;border-radius:8px;overflow:auto;font-size:12px;max-height:200px}.msg{background:var(--mint);color:var(--deep);border-radius:12px;padding:9px 12px;font-size:14px}.err{color:#c0392b;font-size:13px}
 label.l{font-size:13px;color:var(--mut)}
+.pm{border:1.5px solid var(--bd);border-radius:12px;padding:6px 12px;margin:6px 0}.pm legend{font-size:13px;color:var(--mut);padding:0 6px}.pm label{display:flex;gap:8px;align-items:center;padding:5px 0;font-size:14px}.pm input{accent-color:var(--g1)}
+.pix{text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}.pix img{width:220px;max-width:100%;border-radius:12px;background:#fff;padding:8px;border:1px solid var(--bd)}.pix textarea{width:100%;height:76px;font:12px/1.3 monospace;border:1.5px solid var(--bd);border-radius:10px;padding:8px;resize:none;background:#fff;color:var(--fg)}
 /* RITUAL, HISTÓRIA, DISCOVERY */
 .steps,.prin{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .step,.pcard{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:20px;box-shadow:var(--sh)}.step i{font:italic 600 44px/1 var(--serif);color:var(--lime2);font-style:italic;text-shadow:0 1px 0 #0a5a3533}.step h3,.pcard h3{font-size:19px;margin:6px 0 4px}.step p,.pcard p{margin:0;color:var(--mut);font-size:14.5px}
@@ -82,13 +84,13 @@ label.l{font-size:13px;color:var(--mut)}
 .stage .jr:nth-child(1){left:50%;bottom:17%;height:68%;transform:translateX(-50%);z-index:3}
 .stage .jr:nth-child(2){left:7%;bottom:17%;height:52%;z-index:2;transform:rotate(-5deg)}
 .stage .jr:nth-child(3){right:7%;bottom:17%;height:52%;z-index:2;transform:rotate(5deg)}
-.tile span{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 30%,#fff,var(--mint))}.tile .jr{position:absolute;left:50%;transform:translateX(-50%);bottom:3px;height:52px;aspect-ratio:391/900;-webkit-box-reflect:none;filter:drop-shadow(0 3px 2px #0a3d2633)}
+.tile{--th:128px}.tile>span{display:grid;place-items:center;margin:0 auto 8px;position:relative;width:100%;height:var(--th);border-radius:14px;background:radial-gradient(circle at 50% 30%,#fff,var(--mint))}.tile .jr{position:absolute;left:50%;transform:translateX(-50%);bottom:6px;height:calc(var(--th) - 12px);aspect-ratio:391/900;-webkit-box-reflect:none;filter:drop-shadow(0 4px 3px #0a3d2633)}
 .hc{position:relative;aspect-ratio:1/1;border-radius:32px;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 40% 28%,#fff,#eef3dc 70%,#dfeccd);box-shadow:0 36px 70px -18px #000a,0 0 0 1px #ffffff55,0 0 80px -10px #a8e24f66}
 .hc::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 36% 52%,#bfe58f88,transparent 55%)}
 .hc::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26%;z-index:1;background:linear-gradient(180deg,transparent,#ffffffbb 60%,#fff8);border-top:1px solid #fff9}
-.hc .hj{position:absolute;inset:0;display:block;z-index:2}.hc .hj .jr{bottom:17%}
-.hc .hj .jr:nth-child(1){left:5%;height:56%;z-index:2;transform:rotate(-4deg)}.hc .hj .jr:nth-child(2){left:30%;height:66%;z-index:3}
-.hc .hcup{position:absolute;right:3%;bottom:15%;height:56%;width:auto;mix-blend-mode:multiply;z-index:2}
+.hc .hj{position:absolute;inset:0;display:block;z-index:2}.hc .hj .jr{bottom:var(--base)}
+.hc{--jh:56%;--base:17%}.hc .hj .jr{height:var(--jh)}.hc .hj .jr:nth-child(1){left:8%;z-index:2}.hc .hj .jr:nth-child(2){right:8%;z-index:3}
+.hc .hcup{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(var(--base) - 2.1%);height:calc(var(--jh)*1.375);width:auto;mix-blend-mode:multiply;z-index:2}
 .hc .tag{position:absolute;left:16px;top:16px;background:var(--deep);color:#e6f6c8;border-radius:99px;padding:5px 14px;font-size:12px;font-weight:600;z-index:6;letter-spacing:.02em}
 .cb2{margin:0 0 18px;background:linear-gradient(135deg,#eef6e2,#e2f2d8);color:var(--deep);border-radius:26px;overflow:hidden;display:grid;grid-template-columns:1.5fr 1fr;align-items:center;border:1px solid #cfe8bb;box-shadow:var(--sh)}.cb2 img{width:100%;display:block;mix-blend-mode:multiply}.cb2 figcaption{padding:18px 24px;font-size:15px;color:#2c4636}.cb2 b{display:block;font:600 26px var(--serif);margin-bottom:4px;color:var(--deep)}
 .rit{display:grid;grid-template-columns:1.35fr .65fr;gap:14px;align-items:stretch}.rit .steps{grid-template-columns:1fr}.rit figure{margin:0;border-radius:22px;overflow:hidden;border:1px solid var(--bd);background:#f1ede0;min-height:260px;box-shadow:var(--sh)}.rit figure img{width:100%;height:100%;object-fit:cover;display:block}
@@ -110,7 +112,7 @@ main,footer{position:relative;z-index:1}
 <div class="w strip"><div><b>Ingredientes naturais</b>Sem corantes artificiais</div><div><b>Assine e economize</b>Até 25% no semestral</div><div><b>Cancele quando quiser</b>Sem fidelidade</div><div><b>Também no marketplace</b>Mercado Livre, Shopee e Amazon</div></div>
 <section><div class="w"><h2>Compre por objetivo</h2><p class="sub">Escolha o que você quer da sua manhã.</p><div class="tiles" id="tl"></div></div></section>
 <section id="discovery"><div class="w"><div class="disc"><div class="dtop"><div><h2 style="margin:0">Monte o seu Discovery</h2><p class="sub" style="margin:4px 0 0">Não sabe qual sabor combina com você? Misture shots de kits diferentes e descubra, sem se prender a 30 iguais.</p></div><div class="seg" role="group" aria-label="Tamanho do Discovery"><button data-ds="7" aria-pressed="true">7 shots</button><button data-ds="10" aria-pressed="false">10 shots</button></div></div>
-<div class="dg" id="dg"></div><div class="dsum"><div><b id="dc">0 de 7 escolhidos</b><br><span class="ing" id="dtotal">Total: R$ 0,00</span></div><label><input type="checkbox" id="dcup"> <img class="dth" src="img/copo.webp" alt="" loading="lazy">Incluir copo exclusivo (+ R$ 29,90)</label><button class="add" id="dadd" style="margin:0;padding:10px 18px" disabled>Adicionar Discovery</button></div><div class="err" id="dmsg" role="status" style="color:var(--mut)"></div></div></div></section>
+<div class="dg" id="dg"></div><div class="dsum"><div><b id="dc">0 de 7 escolhidos</b><br><span class="ing" id="dtotal">Total: R$ 0,00</span></div><label><input type="checkbox" id="dcup"> <img class="dth" src="img/copo.webp" alt="" loading="lazy">Incluir copo exclusivo (+ <span id="dcupv"></span>)</label><button class="add" id="dadd" style="margin:0;padding:10px 18px" disabled>Adicionar Discovery</button></div><div class="err" id="dmsg" role="status" style="color:var(--mut)"></div></div></div></section>
 <section id="kits"><div class="w"><h2>Todos os kits</h2><p class="sub">Clique no kit para ver ingredientes, modo de uso e cuidados.</p>
 <div class="shop"><aside class="side" aria-label="Filtros"><h3>Objetivo</h3><div id="fo"></div><h3>Preço (7 shots)</h3><div id="fp"></div></aside>
 <div><div class="bar"><span id="rc"></span><label>Ordenar: <select id="so"><option value="r">Relevância</option><option value="a">Menor preço</option><option value="d">Maior preço</option><option value="n">Nome (A–Z)</option></select></label></div>
@@ -140,27 +142,29 @@ main,footer{position:relative;z-index:1}
 <footer><div class="w fl"><a class="logo" href="#top" aria-label="DayliShoot, início"><img src="img/logo-h.webp" alt="DayliShoot" width="126" height="30" loading="lazy"></a><p>DayliShoot · Produtos, preços e prazos de demonstração para validação do layout. Antes do lançamento: conferir rotulagem e alegações com a ANVISA/vigilância sanitária. Este site não faz alegações de cura ou tratamento; as informações são de caráter geral e não substituem orientação profissional.</p></div></footer>
 <div class="ov" id="dr" role="dialog" aria-modal="true" aria-label="Carrinho"><div class="pn" id="dp"></div></div>
 <div class="ov" id="md" role="dialog" aria-modal="true" aria-label="Detalhes do kit"><div class="pn" id="mp"></div></div>
+<script src="catalog.js"></script>
 <script>
 /* ===== CONFIG / INTEGRAÇÃO ===== */
-const CONFIG={store:"DayliShoot",currency:"BRL",freeShipping:120,
- endpoints:{orders:"",stock:"",questions:""},
+const CONFIG={store:"DayliShoot",currency:"BRL",freeShipping:CATALOG.shipping.freeOver,
+ endpoints:{pay:"/api/pay",quote:"/api/quote",status:"/api/status",stock:"",questions:""},
  channels:{mercadolivre:{enabled:false},shopee:{enabled:false},amazon:{enabled:false}}};
 const BEN={gengibre:["#d9b27a","root","tradicionalmente associado à digestão e à sensação de bem-estar"],"cúrcuma":["#e0a526","root","contém curcumina, composto antioxidante"],"limão":["#f3d43b","round","fonte de vitamina C"],"pimenta-do-reino":["#9a9a9a","round","a piperina favorece a absorção da curcumina"],"matchá":["#6fa341","leaf","cafeína com L-teanina, energia mais calma"],laranja:["#f59a23","round","fonte de vitamina C"],canela:["#a8683a","stick","dá sabor adocicado sem açúcar"],"vinagre de maçã":["#e0b35a","drop","ácido acético, com efeito modesto sobre a saciedade"],caiena:["#d62f1f","leaf","capsaicina, sensação de calor"],acerola:["#d93a3a","round","uma das maiores fontes naturais de vitamina C"],cenoura:["#ee7b22","root","betacaroteno, precursor da vitamina A"],"colágeno":["#f5e7d3","drop","proteína usada em rotinas de cuidado com a pele"],beterraba:["#8e1f4a","round","nitratos, estudados no desempenho físico"],salsa:["#3f9a4a","leaf","erva fresca, sabor e aroma"],ameixa:["#6b2d6f","round","fibras e sorbitol, apoio ao trânsito intestinal"],chia:["#a8a8a8","round","fibras que formam gel e dão saciedade"],"mamão":["#f29d38","round","contém papaína, enzima tradicional na digestão"],camomila:["#f2e27a","flower","uso tradicional para relaxar"],"maracujá":["#e6c23a","round","uso tradicional como calmante suave"],melissa:["#5fae5c","leaf","erva tradicional para relaxar"],mel:["#e2a42b","drop","adoçante natural"],abacaxi:["#f0c53a","round","contém bromelina, enzima digestiva"],tulsi:["#3f8f4a","leaf","erva ayurvédica tradicional"],espinafre:["#2f8a3d","leaf","folhas verdes: clorofila, vitamina K e fibras"],"maçã verde":["#8fcf4f","round","fibras e frescor"],pepino:["#5bb36a","round","hidratante e leve"],"água de coco":["#e8f1e0","drop","hidratação com eletrólitos naturais"]};
 const CUID={g:"Pode irritar quem tem gastrite ou refluxo.",s:"Pode causar sonolência: não consuma antes de dirigir.",a:"Contém mel/própolis? Evite se tiver alergia. Não indicado para menores de 1 ano (mel)."};
 const KITS=[
-["limpeza-intestinal","Limpeza intestinal","Intestino leve","#8d5a97",6.2,"Novo",["ameixa","chia","mamão","limão"],"g"],
-["energia-foco","Energia e foco","Energia calma pela manhã","#7bb33a",6.9,"Mais vendido",["matchá","laranja","canela","gengibre"],"g"],
-["emagrecimento","Emagrecimento","Rotina leve e saciedade","#e4572e",6.4,"",["vinagre de maçã","caiena","limão","canela"],"g"],
-["rejuvenescimento","Rejuvenescimento","Cuidado com a pele","#f4a259",7.5,"",["acerola","cenoura","cúrcuma","colágeno"],"g"],
-["energia-forca","Energia e força","Pré-treino natural","#b5213f",6.5,"",["beterraba","gengibre","limão","salsa"],"g"],
-["imunidade","Imunidade","Clássico gengibre e cúrcuma","#f2b632",5.9,"Mais vendido",["gengibre","cúrcuma","limão","pimenta-do-reino"],"g"],
-["sono","Qualidade do sono","Noite mais calma","#6c8ebf",6.6,"Novo",["camomila","maracujá","melissa","mel"],"s"],
-["digestiva","Saúde digestiva","Leveza após as refeições","#e8c547",6.0,"",["abacaxi","gengibre","cúrcuma","tulsi"],"g"],
-["detox","Detox","Verde e fresco","#2e9e5b",6.3,"",["espinafre","maçã verde","pepino","limão"],"g"],
-["bem-estar","Bem-estar geral","Hidratação e rotina","#d9a441",5.8,"",["água de coco","cúrcuma","gengibre","mel"],"g"]];
-const PLANS=[{id:"avulso",n:"Compra avulsa",doses:7,d:0,t:"1 kit de 7 shots, sem compromisso."},{id:"semanal",n:"Plano semanal",doses:7,d:.05,t:"Entrega semanal recorrente."},{id:"mensal",n:"Plano mensal",doses:30,d:.12,t:"30 shots por mês, frete grátis.",hot:1},{id:"semestral",n:"Plano semestral",doses:180,d:.25,t:"6 meses de rotina, melhor preço."}];
-const ACCS=[["caixa","Caixa personalizada",24.9,"box"],["copo","Copo exclusivo",29.9,"cup"],["misturador","Misturador",19.9,"mix"],["frascos","Frascos de vidro (6 un.)",39.9,"jars"]];
-const catalog=KITS.map(([id,name,tag,color,ps,badge,ings,c],i)=>({sku:"KIT-"+id.toUpperCase(),id,name,tag,color,perShot:ps,badge,ings,cuid:CUID[c],ord:i,stock:null,channelIds:{mercadolivre:null,shopee:null,amazon:null}}));
+["limpeza-intestinal","Limpeza intestinal","Intestino leve","#8d5a97","Novo",["ameixa","chia","mamão","limão"],"g"],
+["energia-foco","Energia e foco","Energia calma pela manhã","#7bb33a","Mais vendido",["matchá","laranja","canela","gengibre"],"g"],
+["emagrecimento","Emagrecimento","Rotina leve e saciedade","#e4572e","",["vinagre de maçã","caiena","limão","canela"],"g"],
+["rejuvenescimento","Rejuvenescimento","Cuidado com a pele","#f4a259","",["acerola","cenoura","cúrcuma","colágeno"],"g"],
+["energia-forca","Energia e força","Pré-treino natural","#b5213f","",["beterraba","gengibre","limão","salsa"],"g"],
+["imunidade","Imunidade","Clássico gengibre e cúrcuma","#f2b632","Mais vendido",["gengibre","cúrcuma","limão","pimenta-do-reino"],"g"],
+["sono","Qualidade do sono","Noite mais calma","#6c8ebf","Novo",["camomila","maracujá","melissa","mel"],"s"],
+["digestiva","Saúde digestiva","Leveza após as refeições","#e8c547","",["abacaxi","gengibre","cúrcuma","tulsi"],"g"],
+["detox","Detox","Verde e fresco","#2e9e5b","",["espinafre","maçã verde","pepino","limão"],"g"],
+["bem-estar","Bem-estar geral","Hidratação e rotina","#d9a441","",["água de coco","cúrcuma","gengibre","mel"],"g"]];
+const PLANS=[{id:"avulso",n:"Compra avulsa",t:"1 kit de 7 shots, sem compromisso."},{id:"semanal",n:"Plano semanal",t:"Entrega semanal recorrente."},{id:"mensal",n:"Plano mensal",t:"30 shots por mês, frete grátis.",hot:1},{id:"semestral",n:"Plano semestral",t:"6 meses de rotina, melhor preço."}].map(p=>({...p,...CATALOG.plans[p.id]}));
+const A=k=>CATALOG.accs[k.toUpperCase()];
+const ACCS=[["caixa","Caixa personalizada",A("caixa"),"box"],["copo","Copo exclusivo",A("copo"),"cup"],["misturador","Misturador",A("misturador"),"mix"],["frascos","Frascos de vidro (6 un.)",A("frascos"),"jars"]];
+const catalog=KITS.map(([id,name,tag,color,badge,ings,c],i)=>({sku:"KIT-"+id.toUpperCase(),id,name,tag,color,perShot:CATALOG.kits[id],badge,ings,cuid:CUID[c],ord:i,stock:null,channelIds:{mercadolivre:null,shopee:null,amazon:null}}));
 /* ===== ILUSTRAÇÕES (SVG) ===== */
 const $=s=>document.querySelector(s),R=v=>"R$ "+v.toFixed(2).replace(".",","),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function shape(n,x,y,r=13){const [c,t]=BEN[n]||["#9c9","round"];
@@ -175,12 +179,13 @@ const jar=c=>`<span class="jr" style="--c:${c}"><i></i><img src="img/frasco.webp
 const mixc=(c,p,t)=>`color-mix(in srgb,${c} ${p}%,${t})`;
 function art(k){return`<span class="stage" style="--c:${k.color}" role="img" aria-label="Frascos do kit ${esc(k.name)}">${jar(k.color)}${jar(mixc(k.color,70,"#fff"))}${jar(mixc(k.color,85,"#000"))}</span>`}
 function photo(k,l){return`<span class="ph">${art(k)}</span>`}
-const ACCF={box:["img/caixa.webp","Caixa de palha trançada para organizar os shots",""],cup:["img/copo.webp","Copo de vidro fosco DayliShoot com tampa de bambu e canudo de vidro"," m"],mix:["img/misturador.webp","Misturador elétrico de mão (mixer) branco"," m"],jars:["img/frascos-6.webp","Seis frascos de vidro com tampa de bambu e a marca DayliShoot"," m"]};
+const ACCF={box:["img/caixa.webp","Caixa de palha trançada para organizar os shots",""],cup:["img/copo.webp","Copo de vidro fosco DayliShoot com tampa de bambu e canudo de vidro"," m"],mix:["img/misturador-logo.webp","Misturador elétrico de mão (mixer) branco"," m"],jars:["img/frascos-6.webp","Seis frascos de vidro com tampa de bambu e a marca DayliShoot"," m"]};
 /* ===== ESTADO ===== */
 const price=(k,p)=>k.perShot*p.doses*(1-p.d),pMin=k=>price(k,PLANS[0]);
 let cart=[],fObj="",fPr="",qtext="",sortBy="r",cep="";
 try{cart=JSON.parse(localStorage.getItem("ds_cart")||"[]");cep=localStorage.getItem("ds_cep")||""}catch(_){}
 const save=()=>{try{localStorage.setItem("ds_cart",JSON.stringify(cart))}catch(_){}};
+const planFree=x=>CATALOG.shipping.freePlans.includes(x.plan),isSub=x=>!!CATALOG.recurring[x.plan],cartItems=()=>cart.map(({sku,plan,qty,mix})=>({sku,plan,qty,...(mix?{mix}:{})}));
 const count=()=>cart.reduce((a,x)=>a+x.qty,0),total=()=>cart.reduce((a,x)=>a+x.unit*x.qty,0);
 /* ===== RENDER ===== */
 $("#ha").innerHTML=`<div class="hc"><span class="tag">Frascos, copo e ritual</span><span class="hj">${jar(catalog[5].color)}${jar(catalog[1].color)}</span><img class="hcup" src="img/copo.webp" alt="Copo de vidro fosco DayliShoot com tampa de bambu e canudo"></div>`;
@@ -210,9 +215,10 @@ const ORIG={"limpeza-intestinal":"receita própria do DayliShoot (em validação
 $("#ig").innerHTML=Object.keys(BEN).sort((a,b)=>a.localeCompare(b,"pt")).map(n=>`<div class="ic"><span class="d" style="background:${BEN[n][0]}"></span><div><b>${n[0].toUpperCase()+n.slice(1)}</b>${BEN[n][2]}<br><small>Nos kits: ${catalog.filter(k=>k.ings.includes(n)).map(k=>k.name).join(", ")}</small></div></div>`).join("");
 let dSize=7,dMix={};const dTot=()=>Object.values(dMix).reduce((a,b)=>a+b,0);
 const dPrice=()=>catalog.reduce((a,k)=>a+(dMix[k.id]||0)*k.perShot,0);
+$("#dcupv").textContent=R(A("copo"));
 function dDraw(){const n=dTot();
  $("#dg").innerHTML=catalog.map(k=>`<div class="dk"><span>${k.name}<small>${R(k.perShot)}/shot</small></span><span><button data-dm="${k.id}" aria-label="Menos ${k.name}">−</button> <b>${dMix[k.id]||0}</b> <button data-dp="${k.id}" aria-label="Mais ${k.name}">+</button></span></div>`).join("");
- $("#dc").textContent=`${n} de ${dSize} escolhidos`;$("#dtotal").textContent="Total: "+R(dPrice()+($("#dcup").checked?29.9:0));$("#dadd").disabled=n!=dSize;
+ $("#dc").textContent=`${n} de ${dSize} escolhidos`;$("#dtotal").textContent="Total: "+R(dPrice()+($("#dcup").checked?A("copo"):0));$("#dadd").disabled=n!=dSize;
  $("#dmsg").textContent=n==dSize?"Pronto! Adicione ao carrinho.":(n>dSize?"Remova alguns shots.":`Faltam ${dSize-n} para completar.`)}
 dDraw();
 $("#discovery").addEventListener("click",e=>{const t=e.target.closest("button");if(!t)return;
@@ -221,7 +227,7 @@ $("#discovery").addEventListener("click",e=>{const t=e.target.closest("button");
  if(t.dataset.dm&&(dMix[t.dataset.dm]||0)>0){dMix[t.dataset.dm]--;dDraw()}
  if(t.id=="dadd"&&dTot()==dSize){const parts=catalog.filter(k=>dMix[k.id]).map(k=>`${k.name} ×${dMix[k.id]}`);
   add({sku:"KIT-DISCOVERY-"+dSize,name:`Discovery ${dSize} shots (${parts.join(", ")})`,plan:"discovery:"+catalog.filter(k=>dMix[k.id]).map(k=>k.id+"="+dMix[k.id]).join(","),doses:dSize,unit:dPrice(),mix:{...dMix}});
-  if($("#dcup").checked)add({sku:"ACC-COPO",name:"Copo exclusivo",plan:"avulso",doses:0,unit:29.9});
+  if($("#dcup").checked)add({sku:"ACC-COPO",name:"Copo exclusivo",plan:"avulso",doses:0,unit:A("copo")});
   dMix={};$("#dcup").checked=false;dDraw()}});
 $("#dcup").onchange=dDraw;
 /* ===== MODAL DO KIT ===== */
@@ -243,24 +249,57 @@ document.addEventListener("click",e=>{const t=e.target;
 function addKit(k,pid){const p=PLANS.find(x=>x.id==pid);add({sku:k.sku,name:k.name+" · "+p.n,plan:p.id,doses:p.doses,unit:price(k,p)})}
 function add(i){const f=cart.find(x=>x.sku==i.sku&&x.plan==i.plan);f?f.qty++:cart.push({...i,qty:1});save();badge();drawer()}
 function badge(){$("#cn").textContent=count()}badge();
-function drawer(msg,payload,form){$("#dr").classList.add("on");const tt=total(),left=Math.max(0,CONFIG.freeShipping-tt);
+function drawer(msg,payload,form){$("#dr").classList.add("on");const tt=total(),freeP=cart.some(planFree),left=freeP?0:Math.max(0,CONFIG.freeShipping-tt),sub=cart.some(isSub);
  $("#dp").innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><h2>Seu carrinho</h2><button id="x" class="ghost">Fechar</button></div>`+
- (cart.length?`<div><small>${left?`Faltam ${R(left)} para frete grátis`:"Você ganhou frete grátis!"}</small><div class="prog"><i style="width:${Math.min(100,tt/CONFIG.freeShipping*100)}%"></i></div></div>`+cart.map((x,i)=>`<div class="li"><span>${esc(x.name)}<br><small>${R(x.unit)} cada</small></span><span><button data-m2="${i}" aria-label="Diminuir">−</button> ${x.qty} <button data-p="${i}" aria-label="Aumentar">+</button></span></div>`).join("")+`<div class="li"><b>Total</b><b>${R(tt)}</b></div>`+
-  (form?`<label class="l">Nome<input class="f" id="cn1" autocomplete="name"></label><label class="l">E-mail<input class="f" id="ce" type="email" autocomplete="email"></label><label class="l">CEP<input class="f" id="cc" value="${cep.replace(/\D/g,"")}" inputmode="numeric" maxlength="9"></label><div class="err" id="er" role="alert"></div><button class="add" id="cf">Confirmar pedido</button>`:`<button class="add" id="ck">Finalizar pedido</button>`):`<p>Seu carrinho está vazio. Escolha um kit para começar.</p>`)+
- (msg?`<div class="msg">${msg}</div>`:"")+(payload?`<details open><summary>Dados enviados ao hub</summary><pre>${esc(payload)}</pre></details>`:"")}
+ (cart.length?`<div><small>${left?`Faltam ${R(left)} para frete grátis`:"Você ganhou frete grátis!"}</small><div class="prog"><i style="width:${freeP?100:Math.min(100,tt/CONFIG.freeShipping*100)}%"></i></div></div>`+cart.map((x,i)=>`<div class="li"><span>${esc(x.name)}<br><small>${R(x.unit)} cada</small></span><span><button data-m2="${i}" aria-label="Diminuir">−</button> ${x.qty} <button data-p="${i}" aria-label="Aumentar">+</button></span></div>`).join("")+`<div class="li"><b>${form?"Subtotal":"Total"}</b><b>${R(tt)}</b></div>`+
+  (form?`<label class="l">Nome<input class="f" id="cn1" autocomplete="name"></label><label class="l">E-mail<input class="f" id="ce" type="email" autocomplete="email"></label><label class="l">CPF<input class="f" id="cpf" inputmode="numeric" autocomplete="off" maxlength="14"></label><label class="l">CEP<input class="f" id="cc" value="${cep.replace(/\D/g,"")}" inputmode="numeric" maxlength="9" autocomplete="postal-code"></label><div class="msg" id="adr" hidden></div><label class="l">Número<input class="f" id="num" maxlength="10" autocomplete="off"></label><label class="l">Complemento (opcional)<input class="f" id="comp" maxlength="20" autocomplete="off"></label>`
+  +`<fieldset class="pm"><legend>Forma de pagamento</legend>${sub?"":`<label><input type="radio" name="pm" value="pix" checked> Pix</label>`}<label><input type="radio" name="pm" value="card"${sub?" checked":""}> Cartão de crédito${sub?"":" ou débito"}</label></fieldset>`
+  +(sub?`<div class="msg">Assinatura com renovação automática no cartão de crédito. Cada cobrança já inclui o frete e você cancela quando quiser, em Mercado Pago &gt; Assinaturas.</div>`:"")
+  +`<div id="qt"></div><div class="err" id="er" role="alert"></div><button class="add" id="cf">Pagar</button>`:`<button class="add" id="ck">Finalizar pedido</button>`):`<p>Seu carrinho está vazio. Escolha um kit para começar.</p>`)+
+ (msg?`<div class="msg">${msg}</div>`:"")+(payload?`<details open><summary>Dados enviados ao hub</summary><pre>${esc(payload)}</pre></details>`:"");if(form)quote()}
 $("#co").onclick=()=>drawer();
 $("#dr").onclick=e=>{const t=e.target;if(t.id=="dr"||t.id=="x")$("#dr").classList.remove("on");
  if(t.dataset.p!=null){cart[t.dataset.p].qty++;save();badge();drawer()}
  if(t.dataset.m2!=null){const i=t.dataset.m2;if(--cart[i].qty<1)cart.splice(i,1);save();badge();drawer()}
- if(t.id=="ck")drawer("",null,true);if(t.id=="cf")checkout()};
+ if(t.id=="ck"){const m=cartIssue();m?drawer(m):drawer("",null,true)}if(t.id=="cf")checkout()};
 $("#md").onclick=e=>{if(e.target.id=="md"||e.target.id=="mx")$("#md").classList.remove("on")};
 document.addEventListener("keydown",e=>{if(e.key=="Escape"){$("#md").classList.remove("on");$("#dr").classList.remove("on")}});
-/* ===== CHECKOUT → HUB ===== */
-async function checkout(){const n=$("#cn1").value.trim(),m=$("#ce").value.trim(),c=$("#cc").value.replace(/\D/g,""),er=$("#er");
- if(n.length<3)return er.textContent="Informe seu nome.";if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m))return er.textContent="Informe um e-mail válido.";if(c.length!=8)return er.textContent="CEP deve ter 8 números.";
- const order={id:"PED-"+Date.now(),channel:"loja-propria",currency:CONFIG.currency,createdAt:new Date().toISOString(),customer:{name:n,email:m,zip:c},items:cart.map(({sku,plan,doses,qty,unit,mix})=>({sku,plan,doses,qty,unit:+unit.toFixed(2),...(mix?{mix}:{})})),total:+total().toFixed(2)};
- const body=JSON.stringify(order,null,2);window.dispatchEvent(new CustomEvent("dayshot:order",{detail:order}));
- if(!CONFIG.endpoints.orders)return drawer("Modo demonstração: nenhum endpoint de pedidos configurado. Pedido não foi enviado.",body);
- try{const r=await fetch(CONFIG.endpoints.orders,{method:"POST",headers:{"Content-Type":"application/json"},body});if(!r.ok)throw 0;cart=[];save();badge();drawer("Pedido recebido. Você receberá a confirmação por e-mail.")}
- catch(_){drawer("Não foi possível enviar o pedido. Tente novamente em instantes.",body,true)}}
+/* ===== PAGAMENTO (Mercado Pago: Pix, cartão e assinatura) ===== */
+/* O cartão é digitado na página segura do Mercado Pago; este site nunca recebe número de cartão. Preço e frete são recalculados no servidor. */
+const cpfOk=v=>{const d=v.replace(/\D/g,"");if(d.length!=11||/^(\d)\1+$/.test(d))return false;const f=n=>{let t=0;for(let i=0;i<n;i++)t+=+d[i]*(n+1-i);const r=t*10%11;return r==10?0:r};return f(9)==+d[9]&&f(10)==+d[10]};
+const cartIssue=()=>cart.some(isSub)&&cart.length>1?"Assinaturas são finalizadas separadamente: deixe só a assinatura no carrinho.":"";
+let pixTimer=null,addr={};const stopPix=()=>{clearInterval(pixTimer);pixTimer=null};
+const paid=msg=>{stopPix();cart=[];save();badge();drawer(msg)};
+const POST=b=>({method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
+async function api(url,opt){const r=await fetch(url,opt),j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"Pagamento indisponível no momento.");return j}
+/* CEP -> endereço (ViaCEP) e frete (servidor). Só o número e o complemento são digitados. */
+async function quote(){const z=($("#cc")||{value:""}).value.replace(/\D/g,""),qt=$("#qt"),ad=$("#adr");if(!qt)return;
+ if(z.length!=8){qt.innerHTML="";ad.hidden=true;addr={};return}
+ try{const [v,q]=await Promise.all([fetch("https://viacep.com.br/ws/"+z+"/json/").then(r=>r.json()).catch(()=>({})),api(CONFIG.endpoints.quote,POST({zip:z,items:cartItems()}))]);
+  if($("#cc").value.replace(/\D/g,"")!=z)return;
+  addr=v.erro?{}:{street:v.logradouro||"",district:v.bairro||"",city:v.localidade||"",uf:v.uf||""};
+  ad.hidden=false;ad.textContent=v.erro||!v.localidade?"CEP não encontrado na base dos Correios. Confira os números.":[addr.street,addr.district,addr.city+"/"+addr.uf].filter(Boolean).join(" · ");
+  qt.innerHTML=`<div class="li"><span>Frete · ${esc(q.region)} · ${esc(q.days)} dias úteis</span><span>${q.free?"Grátis":R(q.shipping)}</span></div><div class="li"><b>Total a pagar</b><b>${R(q.total)}</b></div>`}
+ catch(e){qt.innerHTML=`<div class="err">${esc(e.message)}</div>`}}
+async function checkout(){const n=$("#cn1").value.trim(),m=$("#ce").value.trim(),c=$("#cc").value.replace(/\D/g,""),cpf=$("#cpf").value,num=$("#num").value.trim(),er=$("#er"),b=$("#cf"),method=document.querySelector('input[name=pm]:checked').value;
+ if(n.length<3)return er.textContent="Informe seu nome.";if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m))return er.textContent="Informe um e-mail válido.";if(!cpfOk(cpf))return er.textContent="CPF inválido.";if(c.length!=8)return er.textContent="CEP deve ter 8 números.";if(!addr.city)return er.textContent="CEP não encontrado.";if(!num)return er.textContent="Informe o número do endereço.";
+ er.textContent="";b.disabled=true;b.textContent="Aguarde...";
+ try{const r=await api(CONFIG.endpoints.pay,POST({method,customer:{name:n,email:m,zip:c,cpf:cpf.replace(/\D/g,""),address:{...addr,number:num,complement:$("#comp").value.trim()}},items:cartItems()}));
+  if(r.url){let u;try{u=new URL(r.url)}catch(_){}if(!u||u.protocol!="https:"||!/(^|\.)mercadopago\.com(\.[a-z]+)?$/.test(u.hostname))throw new Error("Resposta de pagamento inválida.");location.href=u.href;return}
+  pixView(r)}
+ catch(e){b.disabled=false;b.textContent="Pagar";er.textContent=e.message}}
+function pixView(r){stopPix();const end=Date.parse(r.expiresAt)||Date.now()+18e5;
+ $("#dp").innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><h2>Pague com Pix</h2><button id="x" class="ghost">Fechar</button></div><div class="pix"><b>${R(r.total)}</b><img alt="QR Code Pix" src="data:image/png;base64,${r.qrCodeBase64}"><small>Abra o app do seu banco, escolha Pix e leia o QR Code ou use o Pix copia e cola.</small><textarea readonly id="pxc" aria-label="Pix copia e cola">${esc(r.qrCode)}</textarea><button class="add" id="pxb">Copiar código Pix</button><div class="msg" id="pxs" role="status">Aguardando o pagamento…</div></div>`;
+ $("#pxb").onclick=async()=>{try{await navigator.clipboard.writeText(r.qrCode);$("#pxb").textContent="Código copiado!"}catch(_){$("#pxc").select()}};
+ pixTimer=setInterval(async()=>{if(Date.now()>end){stopPix();const s=$("#pxs");if(s)s.textContent="O Pix expirou. Feche e gere um novo pedido.";return}
+  try{const x=await api(CONFIG.endpoints.status+"?id="+r.id);
+   if(x.status=="approved")paid("Pagamento aprovado! Obrigado pelo seu pedido. Você receberá a confirmação por e-mail.");
+   else if(["rejected","cancelled"].includes(x.status)){stopPix();const s=$("#pxs");if(s)s.textContent="Pagamento não concluído. Feche e tente novamente."}}catch(_){}},4000)}
+$("#dr").addEventListener("input",e=>{if(e.target.id=="cc")quote()});
+/* volta do Mercado Pago (cartão ou assinatura): confirma o status no servidor antes de limpar o carrinho */
+(async()=>{const q=new URLSearchParams(location.search),pay=q.get("pay"),id=q.get("payment_id"),sub=q.get("preapproval_id");if(!pay)return;history.replaceState(null,"",location.pathname);
+ if(pay=="ok"&&(id||sub)){try{const x=await api(CONFIG.endpoints.status+(sub?"?sub="+encodeURIComponent(sub):"?id="+encodeURIComponent(id)));
+  if(x.status=="approved")return paid(sub?"Assinatura ativa! As próximas cobranças são automáticas. Para cancelar, acesse Mercado Pago > Assinaturas.":"Pagamento aprovado! Obrigado pelo seu pedido. Você receberá a confirmação por e-mail.");
+  if(x.status=="in_process"||x.status=="pending")return drawer("Pagamento em análise. Avisaremos por e-mail quando for aprovado.")}catch(_){}}
+ drawer(pay=="pendente"?"Pagamento pendente. Avisaremos por e-mail quando for confirmado.":"O pagamento não foi concluído. Seu carrinho foi mantido; você pode tentar novamente.")})();
 </script></body></html>
