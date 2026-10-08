@@ -90,6 +90,6 @@ module.exports = async (req, res) => {
   } catch (e) {
     const status = e.status || 500;
     if (status === 500) console.error(e);
-    return res.status(status).json({ error: status === 500 ? "Erro interno ao processar o pagamento." : e.message });
+    return res.status(status).json({ error: status === 500 ? "Erro interno ao processar o pagamento." : e.message, ...(e.detail ? { detail: e.detail } : {}) });
   }
 };
