@@ -52,7 +52,7 @@ const PAINEL=fs.readFileSync(path.join(__dirname,"painel.html"),"utf8");
 const ipDe=req=>{const ra=req.socket.remoteAddress||"";return /^(::1|127\.|::ffff:127\.)/.test(ra)?String(req.headers["x-forwarded-for"]||ra).split(",")[0].trim():ra};
 function painel(req,res,u){
  if(u.pathname==="/painel"&&req.method==="GET"){res.writeHead(200,{"content-type":"text/html; charset=utf-8","cache-control":"no-store","x-frame-options":"DENY","x-content-type-options":"nosniff",
-  "content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"});res.end(PAINEL);return true}
+  "content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"});res.end(PAINEL);return true}
  return false}
 async function painelLogin(req,res){const ip=ipDe(req);
  if(A.bloqueado(ip))return send(res,429,{error:"Muitas tentativas. Aguarde 15 minutos."});

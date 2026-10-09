@@ -31,7 +31,7 @@ test("resumo sem período agrupa por mês e ignora pedido cancelado", () => {
   const r = resumo({ orders, lancamentos });
   assert.strictEqual(r.pedidos, 3);
   assert.deepStrictEqual(r.porMes.map((m) => m.mes), ["2026-09", "2026-10"]);
-  assert.deepStrictEqual(r.porMes[0], { mes: "2026-09", entradaCents: 5000, saidaCents: 10000 });
+  assert.deepStrictEqual(r.porMes[0], { mes: "2026-09", entradaCents: 5000, saidaCents: 10000, pedidos: 1 });
   assert.deepStrictEqual(r.porCanal, { "loja-propria": 12390, mercadolivre: 5000 });
 });
 

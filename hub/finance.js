@@ -43,12 +43,13 @@ function resumo({ orders = {}, lancamentos = [], de = "", ate = "" }) {
   const pedidos = Object.entries(orders).map(([k, o]) => ({ ...o, _id: k })).filter((o) => pago(o) && dentro(dataPedido(o), de, ate));
   const lanc = lancamentos.filter((l) => dentro(l.data, de, ate));
   const porMes = {}, porCanal = {}, porCategoria = {}, porKit = {};
-  const m = (k) => (porMes[k] = porMes[k] || { mes: k, entradaCents: 0, saidaCents: 0 });
+  const m = (k) => (porMes[k] = porMes[k] || { mes: k, entradaCents: 0, saidaCents: 0, pedidos: 0 });
   let vendasCents = 0;
   for (const o of pedidos) {
     const v = cents(o.total);
     vendasCents += v;
-    m(mes(dataPedido(o))).entradaCents += v;
+    const pm = m(mes(dataPedido(o)));
+    pm.entradaCents += v; pm.pedidos += 1;
     porCanal[o.channel || "outro"] = (porCanal[o.channel || "outro"] || 0) + v;
     for (const i of o.items || []) if (i.sku) porKit[i.sku] = (porKit[i.sku] || 0) + (Number(i.qty) || 0);
   }
