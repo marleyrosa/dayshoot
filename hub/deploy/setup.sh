@@ -24,7 +24,7 @@ sudo netfilter-persistent save
 
 # Aplicacao
 id hub &>/dev/null || sudo useradd --system --home "$APP" --shell /usr/sbin/nologin hub
-sudo mkdir -p "$APP/data"; sudo cp server.js "$APP/"; sudo chown -R hub:hub "$APP"
+sudo mkdir -p "$APP/data"; sudo cp server.js finance.js auth.js painel.html "$APP/"; sudo chown -R hub:hub "$APP"
 
 # Variaveis (chaves geradas aqui; voce preenche so as do Mercado Livre)
 if [ ! -f "$ENVF" ]; then
@@ -35,6 +35,7 @@ ML_REDIRECT_URI=https://$DOMAIN/ml/callback
 ML_AUTH_HOST=https://auth.mercadolivre.com.br
 TOKEN_ENC_KEY=$(openssl rand -hex 32)
 STORE_API_KEY=$(openssl rand -hex 24)
+ADMIN_PASSWORD=$(openssl rand -base64 18)
 ANTHROPIC_API_KEY=
 PORT=3000
 EOT
@@ -63,3 +64,4 @@ sudo systemctl enable --now dayshoot-hub
 sudo systemctl restart caddy
 echo "Pronto. Falta: editar $ENVF (ML_APP_ID, ML_CLIENT_SECRET) e rodar: sudo systemctl restart dayshoot-hub"
 echo "Teste: https://$DOMAIN/health"
+echo "Painel: https://$DOMAIN/painel  (senha: sudo grep ADMIN_PASSWORD $ENVF)"

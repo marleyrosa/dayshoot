@@ -28,7 +28,8 @@ Entradas: Mercado Livre, Shopee, Amazon → Hub (Claude) → módulos: Pedidos, 
 - [ ] Servidor Orange Pi (Armbian + Node 22 + túnel) — agendado para sex 09/10/2026 19h; cadastrar redirect e webhook no painel do ML
 - [ ] Autorizar conta vendedora (/ml/auth); mapear SKU ↔ anúncios (hub/data/ml-items.json)
 - [ ] Módulo Perguntas: Claude rascunha, humano aprova
-- [ ] Módulo Vendas (painel); depois Shopee e Amazon
+- [x] Painel de gestão no hub (/painel): entradas, saídas, compras, pedidos, clientes, estoque, perguntas — plano em docs/painel-gestao.md
+- [ ] Shopee e Amazon
 - [ ] Trocar JSON por banco de dados antes de escalar
 
 ## Fase 3 — Produção e lançamento
