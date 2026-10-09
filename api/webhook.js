@@ -49,7 +49,7 @@ module.exports = async (req, res) => {
         const ok = await toHub({
           id: `${d.o}-${id}`, channel: "loja-propria", currency: "BRL", createdAt: ap.date_created,
           customer: { name: d.m, email: s.payer_email, zip: d.z, address: { number: d.n, complement: d.c } },
-          items: [{ sku: d.s, plan: d.p, qty: d.q }], total: ap.transaction_amount,
+          items: [{ sku: d.s, plan: d.p, qty: d.q }], total: ap.transaction_amount, subscriptionOf: d.o,
           payment: { provider: "mercadopago", id: ap.payment.id, method: "subscription", subscriptionId: ap.preapproval_id },
         });
         if (!ok) return res.status(500).json({ ok: false });

@@ -10,7 +10,7 @@ Pedidos, estoque e perguntas. Node 18+, sem dependências.
 
 ## Rotas (protegidas por header `x-api-key`, exceto as 3 primeiras)
 `GET /health` · `GET /ml/auth` · `GET /ml/callback` · `POST /ml/webhook`
-`POST /orders` (site da loja) · `GET /orders` · `GET /ml/sync-orders`
+`POST /orders` (site da loja; renovações trazem `subscriptionOf` e recebem o endereço salvo) · `POST /subscriptions` (endereço completo de cada assinatura) · `GET /orders` · `GET /ml/sync-orders`
 `GET|PUT /stock` · `GET /ml/push-stock` (precisa de `data/ml-items.json`: `{"KIT-IMUNIDADE":"MLB..."}`)
 `GET /questions` · `POST /questions/:id/answer` `{ "text": "..." }`
 

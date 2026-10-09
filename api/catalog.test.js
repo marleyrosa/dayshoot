@@ -75,3 +75,13 @@ test("webhook: assinatura válida, inválida, expirada e ausente", () => {
   assert.strictEqual(verifySignature({ ...ok, now, signature: `ts=${velho},v1=${sign(secret, "abc123", "req-1", velho)}` }).reason, "assinatura-expirada");
   assert.strictEqual(verifySignature({ ...ok, secret: "" }).ok, true); // sem segredo configurado: não bloqueia
 });
+
+// ---- /api/health não expõe a configuração sem a chave da loja ----
+test("health: sem chave responde só ok; com chave mostra o diagnóstico", () => {
+  const health = require("./health");
+  const call = (headers) => { let out; const res = { setHeader() {}, status() { return res; }, json(o) { out = o; } }; health({ headers }, res); return out; };
+  process.env.STORE_API_KEY = "chave-teste"; process.env.MP_ACCESS_TOKEN = "TEST-123";
+  assert.deepStrictEqual(call({}), { ok: true });
+  assert.strictEqual(call({ "x-api-key": "chave-teste" }).token.formato, "TEST");
+  delete process.env.STORE_API_KEY; delete process.env.MP_ACCESS_TOKEN;
+});
