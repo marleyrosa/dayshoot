@@ -6,6 +6,19 @@ const crypto = require("crypto");
 const { quote, RECURRING } = require("./_catalog");
 const { mp, siteUrl, reais, cpfOk, readBody } = require("./_mp");
 
+// Guarda a assinatura no hub (HUB_ORDERS_URL termina em /orders; a rota irmã é /subscriptions).
+async function registerSubscription(sub) {
+  const orders = process.env.HUB_ORDERS_URL;
+  if (!orders) return;
+  const url = orders.replace(/\/orders\/?$/, "/subscriptions");
+  const r = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-api-key": process.env.STORE_API_KEY || "" },
+    body: JSON.stringify(sub),
+  }).catch(() => null);
+  if (!r || !r.ok) throw Object.assign(new Error("Não foi possível registrar a assinatura. Tente de novo em instantes."), { status: 503 });
+}
+
 const clean = (v, n) => String(v || "").replace(/[\u0000-\u001f<>]/g, "").trim().slice(0, n);
 const bad = (m) => Object.assign(new Error(m), { status: 400 });
 
@@ -21,6 +34,7 @@ module.exports = async (req, res) => {
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw bad("Informe um e-mail válido.");
     if (!cpfOk(cpf)) throw bad("CPF inválido.");
     if (!address.number) throw bad("Informe o número do endereço.");
+    if (address.street.length < 3 || !address.city || !/^[A-Z]{2}$/.test(address.uf)) throw bad("Informe rua, cidade e UF.");
     if (method !== "pix" && method !== "card") throw bad("Forma de pagamento inválida.");
 
     const q = quote(zip, items); // valida o carrinho, calcula frete e detecta assinatura
@@ -36,6 +50,9 @@ module.exports = async (req, res) => {
     };
 
     if (subscription) {
+      // O endereço completo fica no hub (rota /subscriptions): a referência do Mercado Pago só cabe 256 caracteres
+      // e as renovações precisam da rua, do bairro e da cidade para entregar.
+      await registerSubscription({ id: orderId, customer: { name, email, zip, address }, item: { sku: subscription.sku, plan: subscription.plan, qty: subscription.qty } });
       // Sem banco de dados: os dados do pedido viajam na referência (até 256 caracteres) para o webhook montar cada renovação.
       const ref = Buffer.from(JSON.stringify({ o: orderId, s: subscription.sku, p: subscription.plan, q: subscription.qty, z: zip, n: address.number, c: address.complement, m: name.slice(0, 30) })).toString("base64url");
       const r = RECURRING[subscription.plan], amount = reais(totalCents); // cada cobrança já inclui o frete

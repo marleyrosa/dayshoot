@@ -59,7 +59,12 @@ http.createServer(async(req,res)=>{const u=new URL(req.url,"http://x");
   if(n.topic&&n.topic.startsWith("orders"))syncOrder(id).catch(e=>console.error(e.message));
   if(n.topic==="questions")syncQuestion(id).catch(e=>console.error(e.message));return}
  if(!authed(req))return send(res,401,{error:"x-api-key inválida"}); // tudo abaixo é protegido
- if(u.pathname==="/orders"&&req.method==="POST"){const o=await body(req),db=rd("orders.json",{});db[o.id]={channel:"loja-propria",...o};wr("orders.json",db);decrementStock(o.items.map(i=>({sku:i.sku,qty:i.qty})),o.id);return send(res,201,{ok:1})}
+ if(u.pathname==="/subscriptions"&&req.method==="POST"){const sb=await body(req);if(!sb.id||!sb.customer)return send(res,400,{error:"assinatura inválida"});
+  const db=rd("subscriptions.json",{});db[sb.id]={...sb,createdAt:new Date().toISOString()};wr("subscriptions.json",db);return send(res,201,{ok:1})}
+ if(u.pathname==="/orders"&&req.method==="POST"){const o=await body(req);if(!o.id||!Array.isArray(o.items)||!o.items.length)return send(res,400,{error:"pedido inválido"});
+  const sb=o.subscriptionOf&&rd("subscriptions.json",{})[o.subscriptionOf]; // renovação: completa o endereço salvo na assinatura
+  if(sb)o.customer={...sb.customer,...o.customer,address:{...sb.customer.address,...(o.customer||{}).address}};
+  const db=rd("orders.json",{});db[o.id]={channel:"loja-propria",...o};wr("orders.json",db);decrementStock(o.items.map(i=>({sku:i.sku,qty:i.qty})),o.id);return send(res,201,{ok:1})}
  if(u.pathname==="/orders"&&req.method==="GET")return send(res,200,rd("orders.json",{}));
  if(u.pathname==="/ml/sync-orders")return send(res,200,{synced:await syncRecentOrders()});
  if(u.pathname==="/stock"&&req.method==="GET")return send(res,200,rd("stock.json",{}));
